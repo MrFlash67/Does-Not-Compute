@@ -1,5 +1,5 @@
 import sys, time, DoesNotComputeClasses
-
+inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
 	print 'ZORG. (os) presents:'
