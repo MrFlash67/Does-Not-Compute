@@ -41,4 +41,4 @@ def printDesc():
 	print str(inUseLocation.getDesc())
 if __name__ == '__main__':
 	intro()
-	testLoc = DoesNotComputeClasses.Locaton(1, 'Some cool place that kills you', (0, 2), 'The Cool Death Trap', 'It kills you')
+	testLoc = DoesNotComputeClasses.Location(1, 'Some cool place that kills you', (0, 2), 'The Cool Death Trap', 'It kills you')
