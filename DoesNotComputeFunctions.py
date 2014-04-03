@@ -1,5 +1,5 @@
 import sys, time, DoesNotComputeClasses
-inUseLocation = DoesNotComputeClasses.getCurrentLocation()
+#inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
 	print 'ZORG. (os) presents:'
@@ -41,4 +41,6 @@ def printDesc():
 	print str(inUseLocation.getDesc())
 if __name__ == '__main__':
 	intro()
+	inUseLocation = testLoc
 	testLoc = DoesNotComputeClasses.Location(1, 'Some cool place that kills you', (0, 2), 'The Cool Death Trap', 'It kills you')
+	printDesc()
