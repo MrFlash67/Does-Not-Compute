@@ -9,3 +9,5 @@ containerLocation(['lol', 'wut'], 11, 'A place with items', (900, 67, 42, 1), 'S
 if __name__ == '__main__':
 	print "Name is main!"
 	print everything[0].getDesc()
+	print everything[1].getDesc()
+	print everything[2].getDesc()
