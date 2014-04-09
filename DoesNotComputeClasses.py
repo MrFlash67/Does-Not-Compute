@@ -141,6 +141,27 @@ class BlockedLocation(Location):
 		self.whereCanGoB = whereCanGoB
 		self.itemNeeded = itemNeeded
 
+	def getDesc(self):
+		'''Get the description for the area'''
+		return self.desc
+	
+	def whereIsIt(self):
+		'''Find out its location in a integer.'''
+		return self.where
+	
+	def whereCanGo(self):
+		'''Return a tuple of the integer locations that the player can go to.'''
+		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
+		#And yes, I am insane.
+	
+	def getName(self):
+		'''Get a string name of the location'''
+		return self.name
+		
+	def getSpecialFeatures(self):
+		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
+		return self.specialFeatures
+
 #class Player(object):
 	#'''The class for all stuff related to the player'''
 	#def __init__(self, inventoryStart):
