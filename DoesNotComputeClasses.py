@@ -131,6 +131,16 @@ class containerLocation(Location):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
 
+class BlockedLocation(Location):
+	def __init__(self, where, desc, whereCanGoNB, name, specialFeatures, whereCanGoB, itemNeeded):
+		self.where = where
+		self.desc = desc
+		self.whereCanGoNB = whereCanGoNB
+		self.name = name
+		self.specialFeatures = specialFeatures
+		self.whereCanGoB = whereCanGoB
+		self.itemNeeded = itemNeeded
+
 #class Player(object):
 	#'''The class for all stuff related to the player'''
 	#def __init__(self, inventoryStart):
