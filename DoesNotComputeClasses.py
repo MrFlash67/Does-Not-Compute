@@ -161,6 +161,9 @@ class BlockedLocation(Location):
 	def getSpecialFeatures(self):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
+	def checkOpen(self):
+'''		if invi contains x:
+			pass'''
 
 #class Player(object):
 	#'''The class for all stuff related to the player'''
@@ -198,6 +201,3 @@ if __name__ == '__main__':
 		activeLocation.moveTo(1)
 		stuff += 1
 	print 'Demo mode over'''
-
-	
-
