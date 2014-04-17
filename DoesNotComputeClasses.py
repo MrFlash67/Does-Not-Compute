@@ -161,9 +161,11 @@ class BlockedLocation(Location):
 	def getSpecialFeatures(self):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
-	def checkOpen(self):
-'''		if invi contains x:
-			pass'''
+	def whatItemNeeded:
+		return str(self.itemNeeded)
+	# def checkOpen(self):
+	# 	if invi contains itemNeeded:
+	# 		return True
 
 #class Player(object):
 	#'''The class for all stuff related to the player'''
