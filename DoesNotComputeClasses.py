@@ -140,6 +140,7 @@ class BlockedLocation(Location):
 		self.specialFeatures = specialFeatures
 		self.whereCanGoB = whereCanGoB
 		self.itemNeeded = itemNeeded
+		self.open = False
 
 	def getDesc(self):
 		'''Get the description for the area'''
@@ -161,11 +162,11 @@ class BlockedLocation(Location):
 	def getSpecialFeatures(self):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
-	def whatItemNeeded:
+	def whatItemNeeded(self):
 		return str(self.itemNeeded)
 	# def checkOpen(self):
-	# 	if invi contains itemNeeded:
-	# 		return True
+	# 	if invi in (self.itemNeeded):
+	# 		self.open = True
 
 #class Player(object):
 	#'''The class for all stuff related to the player'''
@@ -191,7 +192,7 @@ if __name__ == '__main__':
 	#intro()
 	#test = containerLocation(['lol', 'wut'], 11, 'A place with items', (900, 67, 42, 1), 'Song of Time', 'I say lol, it contains items, derp')
 	inv = ['No tea']
-	player = Player(['Even less tea', 'Seriously, why are you here?']) #Make serious
+	#player = Player(['Even less tea', 'Seriously, why are you here?']) #Make serious
 	#print player.getCurrentInv(inv)
 	#preBoss = Location(3, 'There is a small spike pit and a magic wand. May as well take the wand.', (1, 4), 'Pre-Boss room', 'Contains WND, requires APT to get in, has entry to bossRoom')
 	#something = MultipuleLocation(3, 0, 'You are in a computer. A banana runs at you', (1, ), 'Starting room', 'Requieres  5 uses of the \'go\' command', ['You cannot move there', 'Are you sure? It looks dangorous.', 'It\'s dangorous to go alone! Don\'t go!', 'It looks just the same, and too much moving to an identical place is bad for you!', 'Fine, go.', 'ERROR: SPPECH OVERFLOW 1', 'ERROR: SPPECH OVERFLOW 2', 'ERROR: SPPECH OVERFLOW 3'], 'Fine, go.')

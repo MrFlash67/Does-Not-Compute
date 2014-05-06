@@ -2,7 +2,7 @@ import sys, time, DoesNotComputeClasses
 #inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
-	print 'ZORG. (os) presents:'
+	print 'MrFlash67 presents:'
 	time.sleep(3)
 	print 'DOES NOT COMPUTE'
 	print
