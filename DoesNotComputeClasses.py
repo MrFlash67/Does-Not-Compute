@@ -1,10 +1,9 @@
 import sys, time, string, os, time, pickle as pck
 
-'''Legacy stuff from old system: /\ New stuff: \/'''
-
 activelocationNumber = '11'
 
 def swapActiveLocation(toMoveTo):
+	'''Swaps active location'''
 	activelocationNumber = toMoveTo 
 	activeLocation = locations[toMoveTo]
 
@@ -178,6 +177,7 @@ class BlockedLocation(Location):
 		return 'You search your pockets. They contain ' + listStuff(inv) + ', ' + listStuff(self.inventoryStart) + '.' #Somewhat broken
 
 def getCurrentLocation():
+	'''Gets current location'''
 	#print 'Oh hi there, if you can see this then it is probably a typo somewhere. F88k. (Find E001 or this line)'
 	return activelocationNumber 
 		

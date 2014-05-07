@@ -13,6 +13,7 @@ import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions
 
 
 def gameloop(invi):
+	'''Main game loop'''
 	while True:
 		command = string.lower(raw_input('> '))
 		if command == 'help':

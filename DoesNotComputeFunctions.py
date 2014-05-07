@@ -23,6 +23,8 @@ def listStuff(l):
 	return str(text)
 #/\ is non-loop stuff. \/ is.
 def showHelp():
+	'''The help display.'''
+	'''Uncomment lines when implimented'''
 	print 'All commands are case-insensitive.'
 	print 'HELP: Display help'
 	#print 'LOOK: Get a description of your surrounds'
@@ -34,6 +36,7 @@ def showHelp():
 	#print 'TAKE: Take all the objects in the room'
 	#print 'USE (COM): Use an item in your inventory. Use the shortcut listed in the inventory to use it.'   
 def exit():
+	'''Exits the program'''
 	print 'Something funny!'
 	sys.exit()
 def printDesc():
