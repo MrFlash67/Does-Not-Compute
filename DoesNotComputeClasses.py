@@ -162,10 +162,12 @@ class BlockedLocation(Location):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
 	def whatItemNeeded(self):
+		'''Returns the item needed to progress'''
 		return str(self.itemNeeded)
-	# def checkOpen(self):
-	# 	if invi in (self.itemNeeded):
-	# 		self.open = True
+	def makeOpen(self):
+		'''Unlocks the BlockedLocation'''
+		if invi in (self.itemNeeded):
+			self.open = True
 
 #class Player(object):
 	#'''The class for all stuff related to the player'''

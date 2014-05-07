@@ -1,17 +1,4 @@
 import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions
-#class Parseable(object):
-	#"""docstring for parseable"""
-	#def __init__(self, parse):
-	#	self.parse = parse
-		#print 'Is This Broken 1.0'
-		#print self.parse
-	#def test(self):
-	#	print 'This is hard, man!'
-	#def parseInput(self):
-		#print 'Is This Broken 1.1'
-	#	return self.parse
-
-
 def gameloop(invi):
 	'''Main game loop'''
 	while True:
