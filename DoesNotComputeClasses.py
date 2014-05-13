@@ -168,6 +168,42 @@ class BlockedLocation(Location):
 		'''Unlocks the BlockedLocation'''
 		if invi in (self.itemNeeded):
 			self.open = True
+class BossLocation(object): #All below TBI
+	'''Class for the locations'''
+	where = 0
+	def __init__(self, where, desc, whereCanGo, name, specialFeatures):
+		self.where = where
+		self.desc = desc
+		self.whereCanGo = whereCanGo
+		self.name = name
+		self.specialFeatures = specialFeatures
+	
+	def getDesc(self):
+		'''Get the description for the area'''
+		return self.desc
+	
+	def whereIsIt(self):
+		'''Find out its location in a integer.'''
+		return self.where
+	
+	def whereCanGo(self):
+		'''Return a tuple of the integer locations that the player can go to.'''
+		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
+		#And yes, I am insane.
+	
+	def getName(self):
+		'''Get a string name of the location'''
+		return self.name
+		
+	def getSpecialFeatures(self):
+		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
+		return self.specialFeatures
+	
+	def moveTo(self, toMoveTo):
+		'''Swaps the active location'''
+		print 'Going to ' + str(toMoveTo) + '!'
+		swapActiveLocation(toMoveTo)
+		
 
 #class Player(object):
 	#'''The class for all stuff related to the player'''

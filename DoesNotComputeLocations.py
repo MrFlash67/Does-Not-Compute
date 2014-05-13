@@ -16,4 +16,4 @@ if __name__ == '__main__':
 	print locs[1].getDesc()
 	print locs[2].getDesc()
 	print locs[3].getDesc()
-	print locs[4].getDesc()
+	print locs[4].getDesc() 
