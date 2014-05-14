@@ -25,6 +25,7 @@ def gameloop(invi, loopNum):
 			print 'Nope!'
 		return loopNum
 		loopNum = loopNum + 1
+
 if __name__ == '__main__':
 	stuffz = ['bob', 'bill']
 	gameloop(stuffz)
