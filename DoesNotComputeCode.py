@@ -17,7 +17,7 @@ def gameloop(invi, loopNum):
 			countAdd(loopNum)
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
-			countAdd(loopNum)
+			
 		elif 'go' in command:
 			pass
 			countAdd(loopNum)
@@ -26,18 +26,20 @@ def gameloop(invi, loopNum):
 			countAdd(loopNum)
 		elif command == 'save':
 			pass
-			countAdd(loopNum)
+			#countAdd(loopNum)
 		elif command == 'load':
 			pass
-			countAdd(loopNum)
+			#countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
 			countAdd(loopNum)
 		elif command == 'use':
 			pass
 			countAdd(loopNum)
+		elif command == 'loopn':
+			print str(loopNum)
 		else:
 			print 'Illeagal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
 	stuffz = ['bob', 'bill']
-	gameloop(stuffz)
+	gameloop(stuffz, 0)
