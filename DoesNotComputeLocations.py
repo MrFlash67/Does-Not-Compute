@@ -7,13 +7,13 @@ BlockedLocation(1, 'You are in a computer, north of where you were. There is a w
 containerLocation(['TELNET FIRE EXTINGLISHER', 'APPLE PLOT TOKEN'], 2, 'You are in a supply room. You see a TELNET FIRE EXTINGLISHER and an APPLE PLOT TOKEN. Better take both.', (1,), 'Supply Room', 'Has stuff in it.'),
 Location(3, 'There is a small spike pit and a magic wand. May as well take the wand.', (1, 4), 'Pre-Boss room', 'Contains WND, requires APT to get in, has entry to bossRoom'),
 #Needs to be Boss Location vv
-Location(4, 'There is a great, big, menancing banana next to you.', (5, 6), 'Arena', 'Has a boss.')
+BossLocation(4, 'You are in an arena.', (5, 6), 'Arena', 'Has a boss.', 'King Banana With Gun')
 ]
 
 if __name__ == '__main__':
-	print "Name is main!"
-	print locs[0].getDesc()
-	print locs[1].getDesc()
-	print locs[2].getDesc()
-	print locs[3].getDesc()
+	#print "Name is main!"
+	#print locs[0].getDesc()
+	#print locs[1].getDesc()
+	#print locs[2].getDesc()
+	#print locs[3].getDesc()
 	print locs[4].getDesc() 

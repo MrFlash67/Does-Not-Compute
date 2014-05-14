@@ -169,18 +169,19 @@ class BlockedLocation(Location):
 		if invi in (self.itemNeeded):
 			self.open = True
 class BossLocation(object): #All below TBI
-	'''Class for the locations'''
+	'''Class for the boss'''
 	where = 0
-	def __init__(self, where, desc, whereCanGo, name, specialFeatures):
+	def __init__(self, where, desc, whereCanGo, name, specialFeatures, bossName):
 		self.where = where
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
+		self.bossName = bossName
 	
 	def getDesc(self):
 		'''Get the description for the area'''
-		return self.desc
+		return self.desc + "\nIt contains a massive monster called " + self.bossName + " who wants to kill you.\nGood luck."
 	
 	def whereIsIt(self):
 		'''Find out its location in a integer.'''
