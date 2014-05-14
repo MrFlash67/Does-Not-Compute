@@ -1,5 +1,5 @@
 import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions
-def gameloop(invi):
+def gameloop(invi, loopNum):
 	'''Main game loop'''
 	while True:
 		command = string.lower(raw_input('> '))
@@ -23,6 +23,8 @@ def gameloop(invi):
 			pass
 		else:
 			print 'Nope!'
+		return loopNum
+		loopNum = loopNum + 1
 if __name__ == '__main__':
 	stuffz = ['bob', 'bill']
 	gameloop(stuffz)
