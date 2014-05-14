@@ -3,4 +3,4 @@ print
 #'''Commented out for time'''
 DoesNotComputeFunctions.intro()
 inv = ['no tea']
-dnc.gameloop(inv, 0)
+loopCount = dnc.gameloop(inv, 0)
