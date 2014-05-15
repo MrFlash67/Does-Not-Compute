@@ -23,10 +23,10 @@ def gameloop(invi, loopNum):
 			countAdd(loopNum)
 		elif command == 'save':
 			pass
-			#countAdd(loopNum)
+			countAdd(loopNum)
 		elif command == 'load':
 			pass
-			#countAdd(loopNum)
+			countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
 			countAdd(loopNum)
@@ -34,7 +34,7 @@ def gameloop(invi, loopNum):
 			pass
 			countAdd(loopNum)
 		elif command == 'loopn':
-			print loopNum
+			print countAdd(loopNum)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
