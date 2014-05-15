@@ -1,10 +1,7 @@
 import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions
-
 def countAdd(loopNum):
-	return loopNum
 	loopNum = loopNum + 1
-
-
+	return loopNum
 def gameloop(invi, loopNum):
 	'''Main game loop'''
 	while True:
@@ -37,9 +34,9 @@ def gameloop(invi, loopNum):
 			pass
 			countAdd(loopNum)
 		elif command == 'loopn':
-			print str(loopNum)
+			print countAdd(loopNum)
 		else:
-			print 'Illeagal command.\nYou will be arrested posthaste.'
+			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
 	stuffz = ['bob', 'bill']
 	gameloop(stuffz, 0)
