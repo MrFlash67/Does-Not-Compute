@@ -171,13 +171,14 @@ class BlockedLocation(Location):
 class BossLocation(object): #All below TBI
 	'''Class for the boss'''
 	where = 0
-	def __init__(self, where, desc, whereCanGo, name, specialFeatures, bossName):
+	def __init__(self, where, desc, whereCanGo, name, specialFeatures, bossName, startTurn):
 		self.where = where
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
 		self.bossName = bossName
+		self.startTurn = startTurn
 	
 	def getDesc(self):
 		'''Get the description for the area'''
@@ -204,6 +205,13 @@ class BossLocation(object): #All below TBI
 		'''Swaps the active location'''
 		print 'Going to ' + str(toMoveTo) + '!'
 		swapActiveLocation(toMoveTo)
+	def attack(self, turn):
+		if turn == self.startTurn or turn == self.startTurn + 1:
+			return 'He attacks.\nHealth:\ninfinity/infinity'
+		elif turn == self.startTurn + 2:
+			return 'He dies from Sudden Death Syndrome.\nYou win.'
+		else:
+			return 'You broke it!'
 		
 
 #class Player(object):
