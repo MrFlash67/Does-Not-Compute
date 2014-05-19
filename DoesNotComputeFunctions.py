@@ -34,7 +34,8 @@ def showHelp():
 	print 'QUIT: Exit the game'
 	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut.'
 	#print 'TAKE: Take all the objects in the room'
-	#print 'USE (COM): Use an item in your inventory. Use the shortcut listed in the inventory to use it.'   
+	#print 'USE (COM): Use an item in your inventory. Use the shortcut listed in the inventory to use it.'
+	print 'STOP: Stop and contemplate the view'   
 def exit():
 	'''Exits the program'''
 	print 'Something funny!'
