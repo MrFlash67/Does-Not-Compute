@@ -35,6 +35,8 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == 'loopn':
 			print loopNum
+		elif command == 'stop':
+			loopNum = countAdd(loopNum)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
