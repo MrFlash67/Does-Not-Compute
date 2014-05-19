@@ -8,33 +8,33 @@ def gameloop(invi, loopNum):
 		command = string.lower(raw_input('> '))
 		if command == 'help':
 			DoesNotComputeFunctions.showHelp()
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif command == 'look around':
 			pass
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
 			
 		elif 'go' in command:
 			pass
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif command == 'save':
 			pass
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif command == 'load':
 			pass
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif command == 'use':
 			pass
-			countAdd(loopNum)
+			loopNum = countAdd(loopNum)
 		elif command == 'loopn':
-			print countAdd(loopNum)
+			print loopNum
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
