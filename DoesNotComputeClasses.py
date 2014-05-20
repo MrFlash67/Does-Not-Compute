@@ -207,7 +207,7 @@ class BossLocation(object): #All below TBI
 		swapActiveLocation(toMoveTo)
 	def attack(self, turn):
 		if turn == self.startTurn or turn == self.startTurn + 1:
-			return 'He attacks.\nHealth:\ninfinity/infinity'
+			return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
 		elif turn == self.startTurn + 2:
 			return 'He dies from Sudden Death Syndrome.\nYou win.'
 		else:
