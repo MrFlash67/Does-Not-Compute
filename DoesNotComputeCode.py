@@ -14,19 +14,17 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
-			
 		elif 'go' in command:
-			pass
 			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
 			loopNum = countAdd(loopNum)
 		elif command == 'save':
 			pass
-			loopNum = countAdd(loopNum)
+			#loopNum = countAdd(loopNum)
 		elif command == 'load':
 			pass
-			loopNum = countAdd(loopNum)
+			#loopNum = countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
 			loopNum = countAdd(loopNum)
