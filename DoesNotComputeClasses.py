@@ -21,7 +21,7 @@ class Location(object):
 		'''Get the description for the area'''
 		return self.desc
 	
-	def whereIsIt(self):
+	def getNumLocation(self):
 		'''Find out its location in a integer.'''
 		return self.where
 	
@@ -73,7 +73,7 @@ class MultipuleLocation(Location):
 		'''Get the description for the area'''
 		return self.desc
 	
-	def whereIsIt(self):
+	def getNumLocation(self):
 		'''Find out its location in a integer.'''
 		return self.where
 	
@@ -113,7 +113,7 @@ class containerLocation(Location):
 		'''Get the description for the area'''
 		return self.desc
 	
-	def whereIsIt(self):
+	def getNumLocation(self):
 		'''Find out its location in a integer.'''
 		return self.where
 	
@@ -145,7 +145,7 @@ class BlockedLocation(Location):
 		'''Get the description for the area'''
 		return self.desc
 	
-	def whereIsIt(self):
+	def getNumLocation(self):
 		'''Find out its location in a integer.'''
 		return self.where
 	
@@ -184,7 +184,7 @@ class BossLocation(object): #All below TBI
 		'''Get the description for the area'''
 		return self.desc + "\nIt contains a massive monster called " + self.bossName + " who wants to kill you.\nGood luck."
 	
-	def whereIsIt(self):
+	def getNumLocation(self):
 		'''Find out its location in a integer.'''
 		return self.where
 	
