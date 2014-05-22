@@ -42,6 +42,9 @@ class Location(object):
 		'''Swaps the active location'''
 		print 'Going to ' + str(toMoveTo) + '!'
 		swapActiveLocation(toMoveTo)
+
+	def getLocType(self):
+		return 'Location'
 		
 class MultipuleLocation(Location):
 	'''Class for the first location. Requires repeated use of the 'go' command'''
@@ -90,6 +93,9 @@ class MultipuleLocation(Location):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
 
+	def getLocType(self):
+		return 'MultipuleLocation'
+
 class containerLocation(Location):
 	'''Holds items'''
 	
@@ -130,6 +136,9 @@ class containerLocation(Location):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
 
+	def getLocType(self):
+		return 'containerLocation'
+
 class BlockedLocation(Location):
 	def __init__(self, where, desc, whereCanGoNB, name, specialFeatures, whereCanGoB, itemNeeded):
 		self.where = where
@@ -168,6 +177,9 @@ class BlockedLocation(Location):
 		'''Unlocks the BlockedLocation'''
 		if invi in (self.itemNeeded):
 			self.open = True
+	def getLocType(self):
+		return 'BlockedLocation'
+
 class BossLocation(object): #All below TBI
 	'''Class for the boss'''
 	where = 0
@@ -212,6 +224,8 @@ class BossLocation(object): #All below TBI
 			return 'He dies from Sudden Death Syndrome.\nYou win.'
 		else:
 			return 'You broke it!'
+	def getLocType(self):
+		return 'BossLocation'
 		
 
 #class Player(object):
