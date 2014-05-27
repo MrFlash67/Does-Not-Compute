@@ -7,12 +7,16 @@ def swapLocation(nowLocation, soonLocation):
 	nowLocGo = locs[bypass].whereCanGo
 	nowLocType = locs[bypass].getLocType()
 	#^^ exists in a state of bloody stupid.
-	'''return nowLoc
+	"""return nowLoc
 	print 'Hi a'
 	if nowLocType == 'Location' or nowLocType == 'containerLocation':
 		print 'Hi b'
 	print nowLocType
-	print 'Hi c' '''
+	print 'Hi c'"""
+	if nowLocType in ('containerLocation', 'Location'):
+		moveNow = 1
+	else:
+		moveNow = 0
 
 
 if __name__ == '__main__':
