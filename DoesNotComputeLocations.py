@@ -15,7 +15,11 @@ if __name__ == '__main__':
 	#print locs[1].getDesc()
 	#print locs[2].getDesc()
 	#print locs[3].getDesc()
-	print locs[4].getDesc()
-	print locs[4].attack(0)
-	print locs[4].attack(1)
-	print locs[4].attack(2)
+	#print locs[4].getDesc()
+	#print locs[4].attack(0)
+	#print locs[4].attack(1)
+	#print locs[4].attack(2)
+	stuff = 0
+	while stuff < 5:
+		locs[0].moveTo(1)
+		stuff += 1
