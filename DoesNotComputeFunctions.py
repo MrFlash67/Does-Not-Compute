@@ -1,4 +1,4 @@
-import sys, time, DoesNotComputeClasses
+import sys, time, DoesNotComputeClasses, DoesNotComputeMovement, DoesNotComputeLocations
 #inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
@@ -43,6 +43,10 @@ def exit():
 def printDesc():
 	'''Because locations are not fully intergreated yet.'''
 	print str(inUseLocation.getDesc())
+def goTest():
+	activeLocation = DoesNotComputeMovement.swapLocation(3, 4)
+def lookTest():
+	print activeLocation
 if __name__ == '__main__':
 	intro()
 	inUseLocation = testLoc
