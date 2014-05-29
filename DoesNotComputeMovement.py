@@ -17,11 +17,16 @@ def swapLocation(nowLocation, soonLocation):
 		moveNow = 1
 	else:
 		moveNow = 0
+	if moveNow == 1:
+		return soonLocation
+	else:
+		return 'You cannot move there'
 
 
 if __name__ == '__main__':
 	pass
-	swapLocation(3, 3)
+	
+	print swapLocation(1, 3)
 	#while True:
 	#	print activeLocation
 
