@@ -6,8 +6,8 @@ try:
 	#import DoesNotComputeMovement
 	#print DoesNotComputeMovement.activeLocation
 	print
-	'''Commented out for time'''
-	#DoesNotComputeFunctions.intro()
+	#'''Commented out for time'''
+	DoesNotComputeFunctions.intro()
 	inv = ['no tea']
 	loopCount = dnc.gameloop(inv, 0)
 except KeyboardInterrupt:

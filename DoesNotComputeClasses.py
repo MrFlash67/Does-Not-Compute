@@ -9,9 +9,9 @@ def swapActiveLocation(toMoveTo):
 
 class Location(object):
 	'''Class for the locations'''
-	where = 0
-	def __init__(self, where, desc, whereCanGo, name, specialFeatures):
-		self.where = where
+	locID = 0
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures):
+		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
@@ -23,7 +23,7 @@ class Location(object):
 	
 	def getNumLocation(self):
 		'''Find out its location in a integer.'''
-		return self.where
+		return self.locID
 	
 	def whereCanGo(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
@@ -49,9 +49,9 @@ class Location(object):
 class MultipuleLocation(Location):
 	'''Class for the first location. Requires repeated use of the 'go' command'''
 	timesTried = 0
-	def __init__(self, howMany, where, desc, whereCanGo, name, specialFeatures, funnyThings, leavingFunnyThing):
+	def __init__(self, howMany, locID, desc, whereCanGo, name, specialFeatures, funnyThings, leavingFunnyThing):
 		self.howMany = int(howMany)
-		self.where = where
+		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
@@ -78,7 +78,7 @@ class MultipuleLocation(Location):
 	
 	def getNumLocation(self):
 		'''Find out its location in a integer.'''
-		return self.where
+		return self.locID
 	
 	def whereCanGo(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
@@ -99,9 +99,9 @@ class MultipuleLocation(Location):
 class containerLocation(Location):
 	'''Holds items'''
 	
-	def __init__(self, whatItems, where, desc, whereCanGo, name, specialFeatures):
+	def __init__(self, whatItems, locID, desc, whereCanGo, name, specialFeatures):
 		self.whatItems = whatItems
-		self.where = where
+		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
@@ -121,7 +121,7 @@ class containerLocation(Location):
 	
 	def getNumLocation(self):
 		'''Find out its location in a integer.'''
-		return self.where
+		return self.locID
 	
 	def whereCanGo(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
@@ -140,8 +140,8 @@ class containerLocation(Location):
 		return 'containerLocation'
 
 class BlockedLocation(Location):
-	def __init__(self, where, desc, whereCanGoNB, name, specialFeatures, whereCanGoB, itemNeeded):
-		self.where = where
+	def __init__(self, locID, desc, whereCanGoNB, name, specialFeatures, whereCanGoB, itemNeeded):
+		self.locID = locID
 		self.desc = desc
 		self.whereCanGoNB = whereCanGoNB
 		self.name = name
@@ -156,7 +156,7 @@ class BlockedLocation(Location):
 	
 	def getNumLocation(self):
 		'''Find out its location in a integer.'''
-		return self.where
+		return self.locID
 	
 	def whereCanGo(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
@@ -180,11 +180,11 @@ class BlockedLocation(Location):
 	def getLocType(self):
 		return 'BlockedLocation'
 
-class BossLocation(object): #All below TBI
+class BossLocation(Location): #All below TBI
 	'''Class for the boss'''
-	where = 0
-	def __init__(self, where, desc, whereCanGo, name, specialFeatures, bossName, startTurn):
-		self.where = where
+	locID = 0
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName, startTurn):
+		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
@@ -198,7 +198,7 @@ class BossLocation(object): #All below TBI
 	
 	def getNumLocation(self):
 		'''Find out its location in a integer.'''
-		return self.where
+		return self.locID
 	
 	def whereCanGo(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
@@ -239,7 +239,7 @@ class BossLocation(object): #All below TBI
 
 def getCurrentLocation():
 	'''Gets current location'''
-	#print 'Oh hi there, if you can see this then it is probably a typo somewhere. F88k. (Find E001 or this line)'
+	#print 'Oh hi there, if you can see this then it is probably a typo somelocID. F88k. (Find E001 or this line)'
 	return activelocationNumber 
 		
 

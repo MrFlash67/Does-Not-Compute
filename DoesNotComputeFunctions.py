@@ -41,11 +41,13 @@ def exit():
 	print 'Something funny!'
 	sys.exit()
 def printDesc():
-	'''Because locations are not fully intergreated yet.'''
+	'''Gets the description of a location.'''
 	print str(inUseLocation.getDesc())
 def goTest():
+	'''Doctype A'''
 	activeLocation = DoesNotComputeMovement.swapLocation(3, 4)
 def lookTest():
+	'''Doctype A'''
 	print activeLocation
 if __name__ == '__main__':
 	intro()
