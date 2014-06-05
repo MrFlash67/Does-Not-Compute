@@ -1,4 +1,5 @@
-import sys, time, DoesNotComputeClasses, DoesNotComputeMovement, DoesNotComputeLocations
+import sys, time, DoesNotComputeClasses, DoesNotComputeMovement
+from DoesNotComputeLocations import locs
 #inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
@@ -46,9 +47,10 @@ def printDesc():
 def goTest():
 	'''Doctype A'''
 	activeLocation = DoesNotComputeMovement.swapLocation(3, 4)
-def lookTest():
-	'''Doctype A'''
-	print activeLocation
+	return activeLocation
+def look(activeLocation):
+	'''Doctype B'''
+	print locs[activeLocation].getDesc()
 if __name__ == '__main__':
 	intro()
 	inUseLocation = testLoc

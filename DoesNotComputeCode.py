@@ -9,14 +9,14 @@ def gameloop(invi, loopNum):
 		if command == 'help':
 			DoesNotComputeFunctions.showHelp()
 			loopNum = countAdd(loopNum)
-		elif command == 'look around':
+		elif command == 'look':
 			#pass
-			DoesNotComputeFunctions.lookTest()
+			DoesNotComputeFunctions.look(stuffaaa)
 			loopNum = countAdd(loopNum)
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
 		elif 'go' in command:
-			DoesNotComputeFunctions.goTest()
+			stuffaaa = DoesNotComputeFunctions.goTest()
 			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
