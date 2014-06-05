@@ -20,7 +20,12 @@ def swapLocation(nowLocation, soonLocation):
 	if moveNow == 1:
 		return soonLocation
 	else:
-		return 'You cannot move there'
+		if nowLocType == 'MultipuleLocation':
+			pass
+		elif nowLocType == 'BlockedLocation':
+			pass
+		else:
+		return 'You cannot move from here'
 
 
 if __name__ == '__main__':
