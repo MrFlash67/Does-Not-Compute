@@ -4,6 +4,7 @@ def countAdd(loopNum):
 	return loopNum
 def gameloop(invi, loopNum):
 	'''Main game loop'''
+	nowLoc = 0
 	while True:
 		command = string.lower(raw_input('> '))
 		if command == 'help':
@@ -11,12 +12,12 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == 'look':
 			#pass
-			DoesNotComputeFunctions.look(stuffaaa)
+			DoesNotComputeFunctions.look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
 		elif 'go' in command:
-			stuffaaa = DoesNotComputeFunctions.goTest()
+			nowLoc = DoesNotComputeFunctions.goTest()
 			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
