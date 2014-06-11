@@ -14,24 +14,28 @@ def swapLocation(nowLocation, soonLocation):
 	print nowLocType
 	print 'Hi c'"""
 	if nowLocType in ('containerLocation', 'Location'):
-		moveNow = 1
-	else:
-		moveNow = 0
-	if moveNow == 1:
 		return soonLocation
 	else:
 		if nowLocType == 'MultipuleLocation':
-			pass
+			locs[bypass].moveTo(soonLocation)
+
 		elif nowLocType == 'BlockedLocation':
-			pass
+			print 'Special code!'
+			if invi in locs[bypass].whatItemNeeded():
+				print 'Go?'
+				return soonLocation
+			else:
+				print 'You cannot move there'
 		else:
 			return 'You cannot move from here'
 
 
 if __name__ == '__main__':
 	pass
-	
-	print swapLocation(1, 3)
+	stuff = 0
+	while stuff < 5:
+		swapLocation(0, 1)
+		stuff += 1
 	#while True:
 	#	print activeLocation
 

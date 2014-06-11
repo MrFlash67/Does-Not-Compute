@@ -40,7 +40,6 @@ class Location(object):
 	
 	def moveTo(self, toMoveTo):
 		'''Swaps the active location'''
-		print 'Going to ' + str(toMoveTo) + '!'
 		swapActiveLocation(toMoveTo)
 
 	def getLocType(self):
@@ -212,11 +211,6 @@ class BossLocation(Location): #All below TBI
 	def getSpecialFeatures(self):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
-	
-	def moveTo(self, toMoveTo):
-		'''Swaps the active location'''
-		print 'Going to ' + str(toMoveTo) + '!'
-		swapActiveLocation(toMoveTo)
 	def attack(self, turn):
 		if turn == self.startTurn or turn == self.startTurn + 1:
 			return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
