@@ -17,7 +17,18 @@ def gameloop(invi, loopNum):
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
 		elif 'go' in command:
-			nowLoc = DoesNotComputeFunctions.goTest()
+			#nowLoc = DoesNotComputeFunctions.goTest()
+			if command == 'go n' or 'go north':
+				print 'You went north!'
+			elif command == 'go s' or 'go south':
+				print 'You went south!'
+			elif command == 'go e' or 'go east':
+				print 'You went east!'
+			elif command == 'go w' or 'go west':
+				print 'You went west!'
+			else:
+				print "Wrong!"
+
 			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
