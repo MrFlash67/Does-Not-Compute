@@ -18,7 +18,7 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.exit()
 		elif 'go' in command:
 			#nowLoc = DoesNotComputeFunctions.goTest()
-			DoesNotComputeFunctions.goSomeway(command)
+			DoesNotComputeFunctions.goCompass(command)
 			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
