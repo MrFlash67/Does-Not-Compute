@@ -1,9 +1,13 @@
 import DoesNotComputeCode
 from DoesNotComputeLocations import locs
 activeLocation = 0
+def getNum():
+	
+	wheretoGo = raw_input('Enter in the location number shown above\n> ')
+	return wheretoGo
 def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 	fusRoDah = nowLocGo[0]
-	print nowLocGo[0]
+	#print nowLocGo[0]
 	while locNum < len(nowLocGo):
 		print str(locNum + 1) + ': ' + locs[fusRoDah].getName()
 		fusRoDah = fusRoDah + 1
@@ -11,7 +15,20 @@ def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 		#print nowLocGo
 		locNum = locNum + 1
 		#print locNum
-	print 'You made it!'
+	#print 'You made it!'
+	wheretoGo = getNum()
+	#wordsOrNum = nowLocGo[int(wheretoGo) - 1]
+	#print wordsOrNum
+	while True:
+		try:
+			return nowLocGo[int(wheretoGo) - 1]
+		except IndexError:
+			print 'Whoops! Try again with a proper number this time!'
+			wheretoGo = getNum()
+		except ValueError:
+			print 'Whoops! Try again with a real number this time!, not just a letter or a word!'
+			wheretoGo = getNum()		
+
 def swapLocation(nowLocation, soonLocation):
 	bypass = nowLocation
 	#nowLoc = bypass
@@ -29,10 +46,10 @@ def swapLocation(nowLocation, soonLocation):
 	if nowLocType in ('containerLocation', 'Location'):
 		print "Where do you want to go?"
 		locNum = 0
-		print 'bobbypin'
+		#print 'bobbypin'
 		
 		#while locNum < len(nowLocGo):
-		locNum = isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
+		activeLocation = isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
 		#locNum = 2
 		#locNum = isBorken(nowLocGo, locNum, nowLocName)
 	else:
