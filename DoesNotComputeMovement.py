@@ -29,7 +29,7 @@ def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 			print 'Whoops! Try again with a real number this time!, not just a letter or a word!'
 			wheretoGo = getNum()		
 
-def swapLocation(nowLocation, soonLocation):
+def swapLocation(nowLocation):
 	bypass = nowLocation
 	#nowLoc = bypass
 	nowLocGo = locs[bypass].whereCanGo
@@ -49,18 +49,15 @@ def swapLocation(nowLocation, soonLocation):
 		#print 'bobbypin'
 		
 		#while locNum < len(nowLocGo):
-		activeLocation = isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
+		return isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
 		#locNum = 2
 		#locNum = isBorken(nowLocGo, locNum, nowLocName)
 	else:
-		if nowLocType == 'MultipuleLocation':
-			locs[bypass].moveTo(soonLocation)
-
-		elif nowLocType == 'BlockedLocation':
+		if nowLocType == 'BlockedLocation':
 			print 'Special code!'
 			if invi in locs[bypass].whatItemNeeded():
 				print 'Go?'
-				return soonLocation
+				#return soonLocation
 			else:
 				print 'You cannot move there'
 		else:
@@ -71,7 +68,7 @@ if __name__ == '__main__':
 	pass
 	stuff = 1
 	#while stuff < 5:
-	swapLocation(5, 8)
+	swapLocation(5)
 		#stuff += 1
 	#while True:
 	#	print activeLocation
