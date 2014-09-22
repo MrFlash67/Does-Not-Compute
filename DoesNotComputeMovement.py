@@ -3,9 +3,10 @@ from DoesNotComputeLocations import locs
 activeLocation = 0
 def getNum():
 	
-	wheretoGo = raw_input('Enter in the location number shown above\n> ')
+	wheretoGo = raw_input('Enter in the location number shown above\n< ')
 	return wheretoGo
 def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
+	print nowLocGo
 	fusRoDah = nowLocGo[0]
 	#print nowLocGo[0]
 	while locNum < len(nowLocGo):
@@ -21,15 +22,16 @@ def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 	#print wordsOrNum
 	while True:
 		try:
+			print 'You have moved!'
 			return nowLocGo[int(wheretoGo) - 1]
 		except IndexError:
 			print 'Whoops! Try again with a proper number this time!'
 			wheretoGo = getNum()
 		except ValueError:
 			print 'Whoops! Try again with a real number this time!, not just a letter or a word!'
-			wheretoGo = getNum()		
+			wheretoGo = getNum()
 
-def swapLocation(nowLocation):
+def swapLocation(nowLocation, invi):
 	bypass = nowLocation
 	#nowLoc = bypass
 	nowLocGo = locs[bypass].whereCanGo
@@ -43,26 +45,18 @@ def swapLocation(nowLocation):
 		print 'Hi b'
 	print nowLocType
 	print 'Hi c'"""
-	if nowLocType in ('containerLocation', 'Location'):
-		print "Where do you want to go?"
-		locNum = 0
-		#print 'bobbypin'
-		
-		#while locNum < len(nowLocGo):
-		return isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
-		#locNum = 2
-		#locNum = isBorken(nowLocGo, locNum, nowLocName)
-	else:
-		if nowLocType == 'BlockedLocation':
-			print 'Special code!'
-			if invi in locs[bypass].whatItemNeeded():
-				print 'Go?'
-				#return soonLocation
-			else:
-				print 'You cannot move there'
-		else:
-			return 'You cannot move from here'
-
+	print "Where do you want to go?"
+	locNum = 0
+	#print 'bobbypin'
+	
+	#while locNum < len(nowLocGo):
+	return isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
+	#locNum = 2
+	#locNum = isBorken(nowLocGo, locNum, nowLocName)
+	locNum = 0
+	#print locs[bypass].whatItemNeeded()
+	return isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
+	
 
 if __name__ == '__main__':
 	pass
@@ -72,5 +66,3 @@ if __name__ == '__main__':
 		#stuff += 1
 	#while True:
 	#	print activeLocation
-
-

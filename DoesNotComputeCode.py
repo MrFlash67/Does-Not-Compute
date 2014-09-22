@@ -17,7 +17,7 @@ def gameloop(invi, loopNum):
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
 		elif 'go' in command:
-			nowLoc = DoesNotComputeMovement.swapLocation(nowLoc)
+			nowLoc = DoesNotComputeMovement.swapLocation(nowLoc, invi)
 			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
