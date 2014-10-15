@@ -1,4 +1,4 @@
-import sys, time, string, os, time, pickle as pck
+import time, string, os
 
 activelocationNumber = '11'
 
@@ -45,8 +45,8 @@ class Location(object):
 	def getLocType(self):
 		return 'Location'
 		
-class MultipuleLocation(Location):
-	'''Class for the first location. Requires repeated use of the 'go' command'''
+'''class MultipuleLocation(Location):
+	'Class for the first location. Requires repeated use of the 'go' command'
 	timesTried = 0
 	def __init__(self, howMany, locID, desc, whereCanGo, name, specialFeatures, funnyThings, leavingFunnyThing):
 		self.howMany = int(howMany)
@@ -72,28 +72,28 @@ class MultipuleLocation(Location):
 			super(MultipuleLocation, self).moveTo(toMoveTo)
 	
 	def getDesc(self):
-		'''Get the description for the area'''
+		Get the description for the area'
 		return self.desc
 	
 	def getNumLocation(self):
-		'''Find out its location in a integer.'''
+		Find out its location in a integer.'
 		return self.locID
 	
 	def whereCanGo(self):
-		'''Return a tuple of the integer locations that the player can go to.'''
+		Return a tuple of the integer locations that the player can go to.'
 		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
 								#And yes, I am insane.
 	
 	def getName(self):
-		'''Get a string name of the location'''
+		'Get a string name of the location'
 		return self.name
 		
 	def getSpecialFeatures(self):
-		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
+		Get the special features and attributes of a location in a string. Has no use in actual programming'
 		return self.specialFeatures
 
 	def getLocType(self):
-		return 'MultipuleLocation'
+		return 'MultipuleLocation' '''
 
 class containerLocation(Location):
 	'''Holds items'''
@@ -150,30 +150,30 @@ class BlockedLocation(Location):
 		self.open = False
 
 	def getDesc(self):
-		'''Get the description for the area'''
+		'Get the description for the area'
 		return self.desc
 	
 	def getNumLocation(self):
-		'''Find out its location in a integer.'''
+		'Find out its location in a integer.'
 		return self.locID
 	
 	def whereCanGo(self):
-		'''Return a tuple of the integer locations that the player can go to.'''
+		'Return a tuple of the integer locations that the player can go to.'
 		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
 		#And yes, I am insane.
 	
 	def getName(self):
-		'''Get a string name of the location'''
+		'Get a string name of the location'
 		return self.name
 		
 	def getSpecialFeatures(self):
-		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
+		'Get the special features and attributes of a location in a string. Has no use in actual programming'
 		return self.specialFeatures
 	def whatItemNeeded(self):
-		'''Returns the item needed to progress'''
+		'Returns the item needed to progress'
 		return str(self.itemNeeded)
 	def makeOpen(self):
-		'''Unlocks the BlockedLocation'''
+		'Unlocks the BlockedLocation'
 		if invi in (self.itemNeeded):
 			self.open = True
 	def getLocType(self):
@@ -237,7 +237,7 @@ def getCurrentLocation():
 	return activelocationNumber 
 		
 
-locations = [Location(3, 'There is a small spike pit and a magic wand. May as well take the wand.', (1, 4), 'Pre-Boss room', 'Contains WND, requires APT to get in, has entry to bossRoom'), MultipuleLocation(3, 0, 'You are in a computer. A banana runs at you', (1, ), 'Starting room', 'Requieres  5 uses of the \'go\' command', ['You cannot move there', 'Are you sure? It looks dangorous.', 'It\'s dangorous to go alone! Don\'t go!', 'It looks just the same, and too much moving to an identical place is bad for you!', 'Fine, go.', 'ERROR: SPPECH OVERFLOW 1', 'ERROR: SPPECH OVERFLOW 2', 'ERROR: SPPECH OVERFLOW 3'], 'Fine, go.'), containerLocation(['lol', 'wut'], 11, 'A place with items', (900, 67, 42, 1), 'Song of Time', 'I say lol, it contains items, derp')]
+#locations = [Location(3, 'There is a small spike pit and a magic wand. May as well take the wand.', (1, 4), 'Pre-Boss room', 'Contains WND, requires APT to get in, has entry to bossRoom'), MultipuleLocation(3, 0, 'You are in a computer. A banana runs at you', (1, ), 'Starting room', 'Requieres  5 uses of the \'go\' command', ['You cannot move there', 'Are you sure? It looks dangorous.', 'It\'s dangorous to go alone! Don\'t go!', 'It looks just the same, and too much moving to an identical place is bad for you!', 'Fine, go.', 'ERROR: SPPECH OVERFLOW 1', 'ERROR: SPPECH OVERFLOW 2', 'ERROR: SPPECH OVERFLOW 3'], 'Fine, go.'), containerLocation(['lol', 'wut'], 11, 'A place with items', (900, 67, 42, 1), 'Song of Time', 'I say lol, it contains items, derp')]
 
 
 if __name__ == '__main__':

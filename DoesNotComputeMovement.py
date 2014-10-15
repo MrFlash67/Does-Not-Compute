@@ -22,7 +22,6 @@ def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 	#print wordsOrNum
 	while True:
 		try:
-			print 'You have moved!'
 			return nowLocGo[int(wheretoGo) - 1]
 		except IndexError:
 			print 'Whoops! Try again with a proper number this time!'
@@ -30,6 +29,8 @@ def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 		except ValueError:
 			print 'Whoops! Try again with a real number this time!, not just a letter or a word!'
 			wheretoGo = getNum()
+		finally:
+			print 'You have moved!'
 
 def swapLocation(nowLocation, invi):
 	bypass = nowLocation
@@ -53,9 +54,9 @@ def swapLocation(nowLocation, invi):
 	return isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
 	#locNum = 2
 	#locNum = isBorken(nowLocGo, locNum, nowLocName)
-	locNum = 0
+	'''locNum = 0'''
 	#print locs[bypass].whatItemNeeded()
-	return isBorken(nowLocGo, locNum, nowLocName, nowLocNum)
+	'''return isBorken(nowLocGo, locNum, nowLocName, nowLocNum)'''
 	
 
 if __name__ == '__main__':
