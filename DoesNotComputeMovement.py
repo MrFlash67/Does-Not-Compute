@@ -1,13 +1,15 @@
 import DoesNotComputeCode
 from DoesNotComputeLocations import locs
 activeLocation = 0
+def getNLGOne(nowLocGo):
+	return nowLocGo[0]
 def getNum():
 	
 	wheretoGo = raw_input('Enter in the location number shown above\n< ')
 	return wheretoGo
 def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 	print nowLocGo
-	fusRoDah = nowLocGo[0]
+	fusRoDah = getNLGOne(nowLocGo)
 	#print nowLocGo[0]
 	while locNum < len(nowLocGo):
 		print str(locNum + 1) + ': ' + locs[fusRoDah].getName()
