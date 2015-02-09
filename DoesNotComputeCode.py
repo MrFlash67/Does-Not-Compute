@@ -1,4 +1,4 @@
-import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement
+import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement__old
 def countAdd(loopNum):
 	loopNum = loopNum + 1
 	return loopNum
@@ -17,7 +17,7 @@ def gameloop(invi, loopNum):
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
 		elif 'go' in command:
-			nowLoc = DoesNotComputeMovement.swapLocation(nowLoc, invi)
+			nowLoc = DoesNotComputeMovement__old.swapLocation(nowLoc, invi)
 			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
