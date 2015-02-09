@@ -1,10 +1,10 @@
-import DoesNotComputeCode as dnc, DoesNotComputeFunctions, sys, DoesNotComputeMovement__old
+import DoesNotComputeCode as dnc, DoesNotComputeFunctions, sys, DoesNotComputeMovement_old
 try:
-	#print DoesNotComputeMovement__old.activeLocation
-	#DoesNotComputeMovement__old.activeLocation = 0
-	#print DoesNotComputeMovement__old.activeLocation
-	#import DoesNotComputeMovement__old
-	#print DoesNotComputeMovement__old.activeLocation
+	#print DoesNotComputeMovement_old.activeLocation
+	#DoesNotComputeMovement_old.activeLocation = 0
+	#print DoesNotComputeMovement_old.activeLocation
+	#import DoesNotComputeMovement_old
+	#print DoesNotComputeMovement_old.activeLocation
 	print
 	'''Commented out for time'''
 	#DoesNotComputeFunctions.intro()

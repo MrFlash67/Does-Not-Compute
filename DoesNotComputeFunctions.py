@@ -1,11 +1,20 @@
-import sys, time, DoesNotComputeClasses, DoesNotComputeMovement__old
+import sys, time, DoesNotComputeClasses, DoesNotComputeMovement_old
 from DoesNotComputeLocations import locs
 #inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
 	time.sleep(3)
-	print 'DOES NOT COMPUTE'
+	print '''
+______                  _   _       _     _____                             _       
+|  _  \                | \ | |     | |   /  __ \                           | |      
+| | | |___   ___  ___  |  \| | ___ | |_  | /  \/ ___  _ __ ___  _ __  _   _| |_ ___ 
+| | | / _ \ / _ \/ __| | . ` |/ _ \| __| | |    / _ \| '_ ` _ \| '_ \| | | | __/ _ \\
+| |/ / (_) |  __/\__ \ | |\  | (_) | |_  | \__/\ (_) | | | | | | |_) | |_| | ||  __/
+|___/ \___/ \___||___/ \_| \_/\___/ \__|  \____/\___/|_| |_| |_| .__/ \__,_|\__\___|
+                                                               | |                  
+                                                               |_|                  
+'''
 	print
 	print 'Press enter to continue.',
 	raw_input()
@@ -46,7 +55,7 @@ def printDesc():
 	print str(inUseLocation.getDesc())
 def goTest():
 	'''Doctype A'''
-	activeLocation = DoesNotComputeMovement__old.swapLocation(3, 4)
+	activeLocation = DoesNotComputeMovement_old.swapLocation(3, 4)
 	return activeLocation
 def look(activeLocation):
 	'''Doctype B'''
