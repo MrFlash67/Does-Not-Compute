@@ -1,4 +1,4 @@
-import DoesNotComputeCode as dnc, DoesNotComputeFunctions, sys, DoesNotComputeMovement_old
+import DoesNotComputeCode as dnc, DoesNotComputeFunctions, sys, DoesNotComputeMovement
 try:
 	#print DoesNotComputeMovement_old.activeLocation
 	#DoesNotComputeMovement_old.activeLocation = 0

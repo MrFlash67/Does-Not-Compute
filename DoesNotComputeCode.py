@@ -1,4 +1,4 @@
-import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement_old
+import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement
 def countAdd(loopNum):
 	loopNum = loopNum + 1
 	return loopNum
@@ -16,9 +16,6 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == 'quit':
 			DoesNotComputeFunctions.exit()
-		elif 'go' in command:
-			nowLoc = DoesNotComputeMovement_old.swapLocation(nowLoc, invi)
-			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
 			loopNum = countAdd(loopNum)
@@ -30,6 +27,17 @@ def gameloop(invi, loopNum):
 			#loopNum = countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
+		elif command in ('go n', 'go north'):
+			DoesNotComputeMovement.goNorth()
+			loopNum = countAdd(loopNum)
+		elif command in ('go s', 'go south'):
+			DoesNotComputeMovement.goSouth()
+			loopNum = countAdd(loopNum)
+		elif command in ('go w', 'go west'):
+			DoesNotComputeMovement.goWest()
+			loopNum = countAdd(loopNum)
+		elif command in ('go e', 'go east'):
+			DoesNotComputeMovement.goEast()
 			loopNum = countAdd(loopNum)
 		elif command == 'use':
 			pass

@@ -1,4 +1,4 @@
-import sys, time, DoesNotComputeClasses, DoesNotComputeMovement_old
+import sys, time, DoesNotComputeClasses, DoesNotComputeMovement
 from DoesNotComputeLocations import locs
 #inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
