@@ -139,10 +139,10 @@ class containerLocation(Location):
 		return 'containerLocation'
 
 class BlockedLocation(Location):
-	def __init__(self, locID, desc, whereCanGoNB, name, specialFeatures, whereCanGoB, itemNeeded):
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoB, itemNeeded):
 		self.locID = locID
 		self.desc = desc
-		self.whereCanGoNB = whereCanGoNB
+		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
 		self.whereCanGoB = whereCanGoB
