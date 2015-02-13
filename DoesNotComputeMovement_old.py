@@ -18,7 +18,8 @@ def isBorken(nowLocGo, locNum ,nowLocName, nowLocNum):
 		#print locNum
 	#print 'You made it!'
 	wheretoGo = getNum()
-	#wordsOrNum = nowLocGo[int(wheretoGo) - 1]
+	#wordsOrNum = nowLoc
+	Go[int(wheretoGo) - 1]
 	#print wordsOrNum
 	while True:
 		try:

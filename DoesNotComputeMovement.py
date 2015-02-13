@@ -1,33 +1,37 @@
-import DoesNotComputeCode
+import DoesNotComputeCode, DoesNotComputeFunctions
 from DoesNotComputeLocations import locs
 activeLocation = 0
-def goNorth():
-	if locs[activeLocation].whereCanGo[0] == -1:
+def goNorth(nowLoc):
+	if locs[nowLoc].whereCanGo[0] == -1:
 		print 'You cannot go this way.'
+		return nowLoc
 	else:
-		print str(locs[activeLocation].whereCanGo[0])
-		return locs[activeLocation].whereCanGo[0]
+		DoesNotComputeFunctions.look(nowLoc)
+		return locs[nowLoc].whereCanGo[0]
 
-def goEast():
-	if locs[activeLocation].whereCanGo[1] == -1:
+def goEast(nowLoc):
+	if locs[nowLoc].whereCanGo[1] == -1:
 		print 'You cannot go this way.'
+		return nowLoc
 	else:
-		print str(locs[activeLocation].whereCanGo[1])
-		return locs[activeLocation].whereCanGo[1]
+		DoesNotComputeFunctions.look(nowLoc)
+		return locs[nowLoc].whereCanGo[1]
 
-def goSouth():
-	if locs[activeLocation].whereCanGo[2] == -1:
+def goSouth(nowLoc):
+	if locs[nowLoc].whereCanGo[2] == -1:
 		print 'You cannot go this way.'
+		return nowLoc
 	else:
-		print str(locs[activeLocation].whereCanGo[2])
-		return locs[activeLocation].whereCanGo[2]
+		DoesNotComputeFunctions.look(nowLoc)
+		return locs[nowLoc].whereCanGo[2]
 
-def goWest():
+def goWest(nowLoc):
 	#Where the skys are blue....
-	if locs[activeLocation].whereCanGo[3] == -1:
+	if locs[nowLoc].whereCanGo[3] == -1:
 		print 'You cannot go this way.'
+		return nowLoc
 	else:
-		print str(locs[activeLocation].whereCanGo[3])
-		return locs[activeLocation].whereCanGo[3]
+		DoesNotComputeFunctions.look(nowLoc)
+		return locs[nowLoc].whereCanGo[3]
 if __name__ == "__main__":
 	print "Kay"
