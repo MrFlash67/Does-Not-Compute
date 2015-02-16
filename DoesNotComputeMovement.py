@@ -33,5 +33,3 @@ def goWest(nowLoc):
 	else:
 		DoesNotComputeFunctions.look(nowLoc)
 		return locs[nowLoc].whereCanGo[3]
-if __name__ == "__main__":
-	print "Kay"
