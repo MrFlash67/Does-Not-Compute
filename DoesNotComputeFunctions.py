@@ -19,6 +19,8 @@ ______                  _   _       _     _____                             _
 	print 'Press enter to continue.',
 	raw_input()
 	print 'You can now enter commands. Type \'help\' without the quotation marks and press \'enter\' for help'
+
+
 def listStuff(l):
 	'''For getting inventory. Not obsolete.'''
 	text = 'nill'
@@ -31,7 +33,9 @@ def listStuff(l):
 			#print text + '2'
 		
 	return str(text)
-#/\ is non-loop stuff. \/ is.
+
+
+
 def showHelp():
 	'''The help display.'''
 	'''Uncomment lines when implimented'''
@@ -45,21 +49,25 @@ def showHelp():
 	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut.'
 	#print 'TAKE: Take all the objects in the room'
 	#print 'USE (COM): Use an item in your inventory. Use the shortcut listed in the inventory to use it.'
-	print 'STOP: Stop and contemplate the view'   
+	print 'STOP: Stop and contemplate the view'  
+
+
 def exit():
 	'''Exits the program'''
 	print 'Something funny!'
 	sys.exit()
+
+
 def printDesc():
 	'''Gets the description of a location.'''
 	print str(inUseLocation.getDesc())
-def goTest():
-	'''Doctype A'''
-	activeLocation = DoesNotComputeMovement_old.swapLocation(3, 4)
-	return activeLocation
+
+
 def look(activeLocation):
 	'''Doctype B'''
 	print locs[activeLocation].getDesc()
+
+
 def whichWays(loc):
 	pass
 if __name__ == '__main__':
