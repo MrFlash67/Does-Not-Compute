@@ -163,4 +163,3 @@ class BossLocation(Location): #All below TBI
 			return 'You broke it!'
 	def getLocType(self):
 		return 'BossLocation'
-		

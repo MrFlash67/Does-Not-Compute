@@ -60,17 +60,8 @@ def goTest():
 def look(activeLocation):
 	'''Doctype B'''
 	print locs[activeLocation].getDesc()
-def goCompass(command):
-	if command == 'go n' or command == 'go north':
-		print 'You went north!'
-	elif command == 'go s' or command == 'go south':
-		print 'You went south!'
-	elif command == 'go e' or command == 'go east':
-		print 'You went east!'
-	elif command == 'go w' or command == 'go west':
-		print 'You went west!'
-	else:
-		print "Wrong!"
+def whichWays(loc):
+	pass
 if __name__ == '__main__':
 	intro()
 	inUseLocation = testLoc
