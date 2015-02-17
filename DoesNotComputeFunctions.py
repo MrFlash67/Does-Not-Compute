@@ -1,6 +1,5 @@
 import sys, time, DoesNotComputeClasses, DoesNotComputeMovement
 from DoesNotComputeLocations import locs
-#inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
@@ -56,12 +55,6 @@ def exit():
 	'''Exits the program'''
 	print 'Something funny!'
 	sys.exit()
-
-
-def printDesc():
-	'''Gets the description of a location.'''
-	print str(inUseLocation.getDesc())
-
 
 def look(activeLocation):
 	'''Doctype B'''
