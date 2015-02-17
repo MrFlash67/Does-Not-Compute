@@ -56,9 +56,9 @@ def exit():
 	print 'Something funny!'
 	sys.exit()
 
-def look(activeLocation):
+def look(loc):
 	'''Doctype B'''
-	print locs[activeLocation].getDesc()
+	print locs[loc].getDesc()
 
 
 def whichWays(loc):
