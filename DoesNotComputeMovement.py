@@ -6,7 +6,7 @@ def goNorth(nowLoc):
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		DoesNotComputeFunctions.look(nowLoc + 1)
+		DoesNotComputeFunctions.look(nowLoc)
 		return locs[nowLoc].whereCanGo[0]
 
 def goEast(nowLoc):
@@ -14,7 +14,7 @@ def goEast(nowLoc):
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		DoesNotComputeFunctions.look(nowLoc + 1)
+		DoesNotComputeFunctions.look(nowLoc)
 		return locs[nowLoc].whereCanGo[1]
 
 def goSouth(nowLoc):
@@ -22,7 +22,7 @@ def goSouth(nowLoc):
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		DoesNotComputeFunctions.look(nowLoc + 1)
+		DoesNotComputeFunctions.look(nowLoc)
 		return locs[nowLoc].whereCanGo[2]
 
 def goWest(nowLoc):
@@ -31,5 +31,5 @@ def goWest(nowLoc):
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		DoesNotComputeFunctions.look(nowLoc + 1)
+		DoesNotComputeFunctions.look(nowLoc)
 		return locs[nowLoc].whereCanGo[3]
