@@ -16,7 +16,7 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == 'go':
 			print 'Use "go north/south/east/west/n/s/e/w"'
-		elif command == 'quit':
+		elif command in ('quit', 'exit', 'leave'):
 			DoesNotComputeFunctions.exit()
 		elif 'take' in command:
 			pass
