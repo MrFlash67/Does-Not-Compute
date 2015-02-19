@@ -70,24 +70,24 @@ def look(activeLocation):
 
 
 def whichWays(loc):
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
 		print "There is an exit to the NORTH"
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
 if __name__ == '__main__':
 	intro()
 	inUseLocation = testLoc
