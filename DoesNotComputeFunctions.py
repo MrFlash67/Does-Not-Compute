@@ -18,6 +18,7 @@ ______                  _   _       _     _____                             _
 	print
 	print 'Press enter to continue.',
 	raw_input()
+	look(0)
 	print 'You can now enter commands. Type \'help\' without the quotation marks and press \'enter\' for help'
 
 
@@ -69,7 +70,24 @@ def look(activeLocation):
 
 
 def whichWays(loc):
-	pass
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+		print "There is an exit to the NORTH"
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if loc[0] == -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
 if __name__ == '__main__':
 	intro()
 	inUseLocation = testLoc

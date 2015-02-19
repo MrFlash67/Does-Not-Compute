@@ -31,15 +31,19 @@ def gameloop(invi, loopNum):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
 		elif command in ('go n', 'go north', 'n'):
 			nowLoc = DoesNotComputeMovement.goNorth(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command in ('go s', 'go south', 's'):
 			nowLoc = DoesNotComputeMovement.goSouth(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command in ('go w', 'go west', 'w'):
 			nowLoc = DoesNotComputeMovement.goWest(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command in ('go e', 'go east', 'e'):
 			nowLoc = DoesNotComputeMovement.goEast(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'use':
 			pass
