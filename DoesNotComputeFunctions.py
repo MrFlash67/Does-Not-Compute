@@ -12,8 +12,8 @@ ______                  _   _       _     _____                             _
 | | | / _ \ / _ \/ __| | . ` |/ _ \| __| | |    / _ \| '_ ` _ \| '_ \| | | | __/ _ \\
 | |/ / (_) |  __/\__ \ | |\  | (_) | |_  | \__/\ (_) | | | | | | |_) | |_| | ||  __/
 |___/ \___/ \___||___/ \_| \_/\___/ \__|  \____/\___/|_| |_| |_| .__/ \__,_|\__\___|
-                                                               | |                  
-                                                               |_|                  
+															   | |                  
+															   |_|                  
 '''
 	print
 	print 'Press enter to continue.',
@@ -42,8 +42,8 @@ def showHelp():
 	'''Uncomment lines when implimented'''
 	print 'All commands are case-insensitive.'
 	print 'HELP: Display help'
-	#print 'LOOK: Get a description of your surrounds'
-	#print 'GO: Move about in the world'
+	print 'LOOK: Get a description of your surroundings'
+	print 'GO n/s/e/w: Move about in the world'
 	#print 'SAVE: Saves and exits your game'
 	#print 'LOAD: Loads your save'
 	print 'QUIT: Exit the game'
@@ -70,24 +70,10 @@ def look(activeLocation):
 
 
 def whichWays(loc):
-	if loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-		print "There is an exit to the NORTH"
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
-	elif loc[0] > -1 and loc[1] > -1 and loc[2] > -1 and loc[3] > -1:
+	if __name__ == '__main__':
+		print 'wooop'
+
+
 if __name__ == '__main__':
 	intro()
 	inUseLocation = testLoc
