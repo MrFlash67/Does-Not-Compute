@@ -53,6 +53,8 @@ def gameloop(invi, loopNum):
 		elif command == 'stop':
 			print 'You stop and admire the view'
 			loopNum = countAdd(loopNum)
+		elif command == "exits":
+			DoesNotComputeFunctions.whichWays(nowLoc)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
