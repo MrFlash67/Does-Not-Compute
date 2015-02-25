@@ -69,7 +69,7 @@ def look(activeLocation):
 
 
 def whichWays(thing):
-	
+	pass
 
 if __name__ == '__main__':
 	intro()
