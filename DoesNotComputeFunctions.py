@@ -1,6 +1,4 @@
 import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations
-from DoesNotComputeClasses import *
-from DoesNotComputeLocations import locs
 #inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
@@ -71,15 +69,7 @@ def look(activeLocation):
 
 
 def whichWays(thing):
-	print 'Uno.'
-	locs1 = DoesNotComputeLocations.locs[0]
-	locs = locs1.whereCanGo()
-	print 'MS-DOS'
-	if locs[0] != -1 and locs[1] == -1 and locs[2] == -1 and locs[3] != -1:
-		print 'There are exits to the NORTH and WEST'
-	else:
-		print "Dunno what to tell you."
-
+	
 
 if __name__ == '__main__':
 	intro()
