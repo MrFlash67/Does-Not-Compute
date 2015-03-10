@@ -68,11 +68,22 @@ def look(activeLocation):
 	print locs[activeLocation].getDesc()
 
 
-def whichWays(thing):
-	pass
+def whichWays(locs):
+	num = 0
+	for loc in locs:
+		if num == 0:
+			pass
+		elif num == 1:
+			pass
+		elif num == 2:
+			pass
+		elif num == 3:
+			pass
+		if loc == -1:
+			print 'No moving to the %s!'
+		else:
+			print 'You can go to the %s!'
+		num =+ 1
 
 if __name__ == '__main__':
-	intro()
-	inUseLocation = testLoc
-	testLoc = DoesNotComputeClasses.Location(1, 'Some cool place that kills you', (0, 2), 'The Cool Death Trap', 'It kills you')
-	printDesc()
+	whichWays([-1, 2, -1, 3])
