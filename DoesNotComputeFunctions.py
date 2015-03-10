@@ -72,18 +72,20 @@ def whichWays(locs):
 	num = 0
 	for loc in locs:
 		if num == 0:
-			pass
+			way = 'North'
 		elif num == 1:
-			pass
+			way = 'East'
 		elif num == 2:
-			pass
+			way = 'South'
 		elif num == 3:
-			pass
+			way = 'West'
 		if loc == -1:
-			print 'No moving to the %s!'
+			print 'No moving to the {}!'.format(way)
 		else:
-			print 'You can go to the %s!'
-		num =+ 1
+			print 'You can go to the {}!'.format(way)
+		print num
+		num = num + 1
+		print num
 
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
