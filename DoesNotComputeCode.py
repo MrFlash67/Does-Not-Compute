@@ -1,4 +1,5 @@
 import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement
+from DoesNotComputeLocations import *
 def countAdd(loopNum):
 	loopNum = loopNum + 1
 	return loopNum
@@ -54,7 +55,7 @@ def gameloop(invi, loopNum):
 			print 'You stop and admire the view'
 			loopNum = countAdd(loopNum)
 		elif command == "exits":
-			DoesNotComputeFunctions.whichWays(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':

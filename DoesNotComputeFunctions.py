@@ -69,6 +69,11 @@ def look(activeLocation):
 
 
 def whichWays(locs):
+	locs0 = locs.whereCanGo[0]
+	locs1 = locs.whereCanGo[1]
+	locs2 = locs.whereCanGo[2]
+	locs3 = locs.whereCanGo[3]
+	locs = [locs0, locs1, locs2, locs3]
 	num = 0
 	for loc in locs:
 		if num == 0:
@@ -83,9 +88,9 @@ def whichWays(locs):
 			print 'No moving to the {}!'.format(way)
 		else:
 			print 'You can go to the {}!'.format(way)
-		print num
+		#print num
 		num = num + 1
-		print num
+		#print num
 
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
