@@ -93,5 +93,8 @@ def whichWays(locs):
 		num = num + 1
 		#print num
 
+def itemInfo(loc):
+	pass
+
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
