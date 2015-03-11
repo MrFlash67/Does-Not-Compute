@@ -12,8 +12,8 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.showHelp()
 			loopNum = countAdd(loopNum)
 		elif command == 'look':
-			#pass
 			DoesNotComputeFunctions.look(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 			loopNum = countAdd(loopNum)
 		elif command == 'go':
 			print 'Use "go north/south/east/west/n/s/e/w"'

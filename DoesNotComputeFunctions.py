@@ -11,13 +11,14 @@ ______                  _   _       _     _____                             _
 | | | / _ \ / _ \/ __| | . ` |/ _ \| __| | |    / _ \| '_ ` _ \| '_ \| | | | __/ _ \\
 | |/ / (_) |  __/\__ \ | |\  | (_) | |_  | \__/\ (_) | | | | | | |_) | |_| | ||  __/
 |___/ \___/ \___||___/ \_| \_/\___/ \__|  \____/\___/|_| |_| |_| .__/ \__,_|\__\___|
-															   | |                  
-															   |_|                  
+							       | |
+							       |_|
 '''
 	print
 	print 'Press enter to continue.',
 	raw_input()
 	look(0)
+	whichWays(DoesNotComputeLocations.locs[0])
 	print 'You can now enter commands. Type \'help\' without the quotation marks and press \'enter\' for help'
 
 
@@ -65,7 +66,7 @@ def printDesc():
 
 def look(activeLocation):
 	'''Observes the surroundings'''
-	print locs[activeLocation].getDesc()
+	print DoesNotComputeLocations.locs[activeLocation].getDesc()
 
 
 def whichWays(locs):
