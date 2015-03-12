@@ -54,3 +54,6 @@ docs/_build/
 
 #Mac stuff
 .DS_Store
+
+#other stuff
+loop.py
