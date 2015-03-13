@@ -30,10 +30,6 @@ class Location(object):
 	def getSpecialFeatures(self):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
-	
-	def moveTo(self, toMoveTo):
-		'''Swaps the active location'''
-		swapActiveLocation(toMoveTo)
 
 	def getLocType(self):
 		return 'Location'
@@ -48,9 +44,6 @@ class containerLocation(Location):
 		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
-
-	def moveTo(self, toMoveTo):
-		super(containerLocation, self).moveTo(toMoveTo)
 
 	def getItems(self):
 		'''Get a list of the items here'''
