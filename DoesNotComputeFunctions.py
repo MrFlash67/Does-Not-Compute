@@ -94,7 +94,8 @@ def whichWays(locs):
 		#print num
 
 def itemInfo(loc):
-	if loc == 'containerLocation':
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation':
+		print str(DoesNotComputeLocations.locs[loc].getItems())
 		print 'Hello!'
 	else:
 		print 'There are no items in this location.'
