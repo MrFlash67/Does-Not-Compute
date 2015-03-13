@@ -94,7 +94,10 @@ def whichWays(locs):
 		#print num
 
 def itemInfo(loc):
-	pass
+	if loc == 'containerLocation':
+		print 'Hello!'
+	else:
+		print 'There are no items in this location.'
 
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])

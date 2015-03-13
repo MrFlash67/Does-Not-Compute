@@ -56,6 +56,8 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == "exits":
 			DoesNotComputeFunctions.whichWays(locs[nowLoc])
+		elif command == 'items':
+			DoesNotComputeFunctions.itemInfo(locs[nowLoc].getLocType())
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
