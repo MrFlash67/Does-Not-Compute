@@ -1,4 +1,5 @@
-import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement_old
+import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement
+from DoesNotComputeLocations import *
 def countAdd(loopNum):
 	loopNum = loopNum + 1
 	return loopNum
@@ -11,14 +12,13 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.showHelp()
 			loopNum = countAdd(loopNum)
 		elif command == 'look':
-			#pass
 			DoesNotComputeFunctions.look(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 			loopNum = countAdd(loopNum)
-		elif command == 'quit':
+		elif command == 'go':
+			print 'Use "go north/south/east/west/n/s/e/w"'
+		elif command in ('quit', 'exit', 'leave'):
 			DoesNotComputeFunctions.exit()
-		elif 'go' in command:
-			nowLoc = DoesNotComputeMovement_old.swapLocation(nowLoc, invi)
-			loopNum = countAdd(loopNum)
 		elif 'take' in command:
 			pass
 			loopNum = countAdd(loopNum)
@@ -30,6 +30,21 @@ def gameloop(invi, loopNum):
 			#loopNum = countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
+		elif command in ('go n', 'go north', 'n'):
+			nowLoc = DoesNotComputeMovement.goNorth(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
+			loopNum = countAdd(loopNum)
+		elif command in ('go s', 'go south', 's'):
+			nowLoc = DoesNotComputeMovement.goSouth(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
+			loopNum = countAdd(loopNum)
+		elif command in ('go w', 'go west', 'w'):
+			nowLoc = DoesNotComputeMovement.goWest(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
+			loopNum = countAdd(loopNum)
+		elif command in ('go e', 'go east', 'e'):
+			nowLoc = DoesNotComputeMovement.goEast(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'use':
 			pass
@@ -39,6 +54,8 @@ def gameloop(invi, loopNum):
 		elif command == 'stop':
 			print 'You stop and admire the view'
 			loopNum = countAdd(loopNum)
+		elif command == "exits":
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
