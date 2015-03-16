@@ -97,5 +97,13 @@ def itemInfo(loc):
 	else:
 		print 'There are no items in this location.'
 
+def itemPickup(loc):
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation':
+		print str(DoesNotComputeLocations.locs[loc].getItems())
+		return DoesNotComputeLocations.locs[loc].getItems()
+	else:
+		print 'There are no items in this location.'
+		return None
+
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])

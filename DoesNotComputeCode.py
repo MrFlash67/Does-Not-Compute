@@ -19,9 +19,6 @@ def gameloop(invi, loopNum):
 			print 'Use "go north/south/east/west/n/s/e/w"'
 		elif command in ('quit', 'exit', 'leave'):
 			DoesNotComputeFunctions.exit()
-		elif 'take' in command:
-			pass
-			loopNum = countAdd(loopNum)
 		elif command == 'save':
 			pass
 			#loopNum = countAdd(loopNum)
@@ -58,6 +55,9 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 		elif command == 'items' or command == 'ii':
 			DoesNotComputeFunctions.itemInfo(nowLoc)
+		elif command == 'take':
+			invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
+			loopNum = countAdd(loopNum)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
