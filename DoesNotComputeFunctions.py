@@ -30,12 +30,10 @@ def listStuff(l):
 			text = str(s)
 			#print text + '1'
 		else:
-			text = text + ', ' + str(s)
+			text = text + ' and a ' + str(s)
 			#print text + '2'
 		
 	return str(text)
-
-
 
 def showHelp():
 	'''The help display.'''
@@ -95,8 +93,7 @@ def whichWays(locs):
 
 def itemInfo(loc):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation':
-		print str(DoesNotComputeLocations.locs[loc].getItems())
-		print 'Hello!'
+		print 'There is ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' lying on the floor.'
 	else:
 		print 'There are no items in this location.'
 
