@@ -44,6 +44,7 @@ class containerLocation(Location):
 		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
+		self.hasItems = True
 
 	def getItems(self):
 		'''Get a list of the items here'''
@@ -73,6 +74,10 @@ class containerLocation(Location):
 
 	def getLocType(self):
 		return 'containerLocation'
+	def getHasItems:
+		return self.hasItems
+	def swapItems:
+		self.hasItems = False
 
 class BlockedLocation(Location):
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoB, itemNeeded):
