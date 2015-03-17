@@ -97,14 +97,22 @@ def itemInfo(loc):
 	else:
 		print 'There are no items in this location.'
 
+def itemTF(loc):
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation':
+		return True
+	else:
+		return False
+
 def itemPickup(loc):
 	try:
-		print str(DoesNotComputeLocations.locs[loc].getItems())
-		print 'You now have ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + 'in your inventory.'
+		print 'You now have ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' in your inventory.'
 		return DoesNotComputeLocations.locs[loc].getItems()
 	except TypeError:
 		print 'There are no items in this location.'
-			return None
+		return None
+	except AttributeError:
+		print 'There are no items in this location.'
+		return None
 
 
 if __name__ == '__main__':

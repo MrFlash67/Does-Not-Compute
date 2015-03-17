@@ -56,7 +56,10 @@ def gameloop(invi, loopNum):
 		elif command == 'items' or command == 'ii':
 			DoesNotComputeFunctions.itemInfo(nowLoc)
 		elif command == 'take':
-			invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
+			if DoesNotComputeFunctions.itemTF(nowLoc):
+				invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
+			else:
+				print 'There are no items in this location.'
 			loopNum = countAdd(loopNum)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
