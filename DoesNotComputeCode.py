@@ -57,8 +57,9 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.itemInfo(nowLoc)
 		elif command == 'take':
 			if DoesNotComputeFunctions.itemTF(nowLoc):
-				if pass:
+				if locs[nowLoc].getHasItems():
 					invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
+					locs[nowLoc].swapItems()
 				else:
 					print 'You have already took all the items in this area.'
 			else:
