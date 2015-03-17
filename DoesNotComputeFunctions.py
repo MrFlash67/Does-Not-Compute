@@ -46,7 +46,7 @@ def showHelp():
 	#print 'LOAD: Loads your save'
 	print 'QUIT: Exit the game'
 	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut.'
-	#print 'TAKE: Take all the objects in the room'
+	print 'TAKE: Take all the objects in the room'
 	#print 'USE (COM): Use an item in your inventory. Use the shortcut listed in the inventory to use it.'
 	print 'STOP: Stop and contemplate the view'  
 
@@ -98,12 +98,14 @@ def itemInfo(loc):
 		print 'There are no items in this location.'
 
 def itemPickup(loc):
-	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation':
+	try:
 		print str(DoesNotComputeLocations.locs[loc].getItems())
+		print 'You now have ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + 'in your inventory.'
 		return DoesNotComputeLocations.locs[loc].getItems()
-	else:
+	except TypeError:
 		print 'There are no items in this location.'
-		return None
+			return None
+
 
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
