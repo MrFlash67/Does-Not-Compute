@@ -74,9 +74,9 @@ class containerLocation(Location):
 
 	def getLocType(self):
 		return 'containerLocation'
-	def getHasItems:
+	def getHasItems():
 		return self.hasItems
-	def swapItems:
+	def swapItems():
 		self.hasItems = False
 
 class BlockedLocation(Location):
