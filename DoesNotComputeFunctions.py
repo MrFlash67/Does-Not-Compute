@@ -92,7 +92,7 @@ def whichWays(locs):
 		#print num
 
 def itemInfo(loc):
-	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation':
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation' and DoesNotComputeLocations.locs[loc].getHasItems():
 		print 'There is ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' lying on the floor.'
 	else:
 		print 'There are no items in this location.'
