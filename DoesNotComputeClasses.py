@@ -117,6 +117,8 @@ class BlockedLocation(Location):
 		'Unlocks the BlockedLocation'
 		if invi in (self.itemNeeded):
 			self.open = True
+	def getIsOpen(self):
+		return self.open
 	def getLocType(self):
 		return 'BlockedLocation'
 

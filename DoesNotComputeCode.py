@@ -14,6 +14,11 @@ def gameloop(invi, loopNum):
 		elif command == 'look':
 			DoesNotComputeFunctions.look(nowLoc)
 			DoesNotComputeFunctions.whichWays(locs[nowLoc])
+			if locs[nowLoc].getLocType() == 'BlockedLocation':
+				if not locs[nowLoc].getIsOpen:
+					print 'You can move through here'
+				else:
+					print 'You cannot move through here'
 			loopNum = countAdd(loopNum)
 		elif command == 'go':
 			print 'Use "go north/south/east/west/n/s/e/w"'
