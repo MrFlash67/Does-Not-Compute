@@ -67,14 +67,14 @@ def look(activeLocation):
 	print DoesNotComputeLocations.locs[activeLocation].getDesc()
 
 
-def whichWays(locs):
-	locs0 = locs.whereCanGo[0]
-	locs1 = locs.whereCanGo[1]
-	locs2 = locs.whereCanGo[2]
-	locs3 = locs.whereCanGo[3]
-	locs = [locs0, locs1, locs2, locs3]
+def whichWays(loc):
+	loc0 = loc.whereCanGo[0]
+	loc1 = loc.whereCanGo[1]
+	loc2 = loc.whereCanGo[2]
+	loc3 = loc.whereCanGo[3]
+	loc = [loc0, loc1, loc2, locs]
 	num = 0
-	for loc in locs:
+	for loc in loc:
 		if num == 0:
 			way = 'North'
 		elif num == 1:
@@ -116,6 +116,12 @@ def itemPickup(loc):
 
 def lockedOpen(loc, neededItem):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'blockedLocation':
+		if not DoesNotComputeLocations.locs[loc].getIsOpen():
+			if DoesNotComputeLocations.locs[loc].
+		else:
+			print 'The door is already open.'
+	else:
+		print 'There is nothing to unlock in this location'
 
 
 if __name__ == '__main__':
