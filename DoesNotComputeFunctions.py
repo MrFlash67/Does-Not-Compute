@@ -72,7 +72,7 @@ def whichWays(loc):
 	loc1 = loc.whereCanGo[1]
 	loc2 = loc.whereCanGo[2]
 	loc3 = loc.whereCanGo[3]
-	loc = [loc0, loc1, loc2, locs]
+	loc = [loc0, loc1, loc2, loc3]
 	num = 0
 	for loc in loc:
 		if num == 0:
@@ -115,7 +115,7 @@ def itemPickup(loc):
 		return None
 
 def lockedOpen(loc, inv):
-	if DoesNotComputeLocations.locs[loc].getLocType() == 'blockedLocation':
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
 		if not DoesNotComputeLocations.locs[loc].getIsOpen():
 			if  DoesNotComputeLocations.locs[loc].getItemNeeded() in inv:
 				pass
