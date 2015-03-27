@@ -3,6 +3,14 @@ from DoesNotComputeLocations import *
 def countAdd(loopNum):
 	loopNum = loopNum + 1
 	return loopNum
+def look(loc):
+	DoesNotComputeFunctions.look(loc)
+	DoesNotComputeFunctions.whichWays(locs[loc])
+	if locs[loc].getLocType() == 'BlockedLocation':
+		if not locs[loc].getIsOpen:
+			print 'You can move through here'
+		else:
+			print 'You cannot move through here'
 def gameloop(invi, loopNum):
 	'''Main game loop'''
 	nowLoc = 0
@@ -12,13 +20,7 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.showHelp()
 			loopNum = countAdd(loopNum)
 		elif command == 'look':
-			DoesNotComputeFunctions.look(nowLoc)
-			DoesNotComputeFunctions.whichWays(locs[nowLoc])
-			if locs[nowLoc].getLocType() == 'BlockedLocation':
-				if not locs[nowLoc].getIsOpen:
-					print 'You can move through here'
-				else:
-					print 'You cannot move through here'
+			look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'go':
 			print 'Use "go north/south/east/west/n/s/e/w"'
@@ -34,21 +36,21 @@ def gameloop(invi, loopNum):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
 		elif command in ('go n', 'go north', 'n'):
 			nowLoc = DoesNotComputeMovement.goNorth(nowLoc)
-			DoesNotComputeFunctions.look(nowLoc)
+			look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command in ('go s', 'go south', 's'):
 			nowLoc = DoesNotComputeMovement.goSouth(nowLoc)
-			DoesNotComputeFunctions.look(nowLoc)
+			look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command in ('go w', 'go west', 'w'):
 			nowLoc = DoesNotComputeMovement.goWest(nowLoc)
-			DoesNotComputeFunctions.look(nowLoc)
+			look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command in ('go e', 'go east', 'e'):
 			nowLoc = DoesNotComputeMovement.goEast(nowLoc)
-			DoesNotComputeFunctions.look(nowLoc)
+			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command == 'use':
+		elif command == 'open':
 			pass
 			loopNum = countAdd(loopNum)
 		elif command == 'loopn':

@@ -47,7 +47,7 @@ def showHelp():
 	print 'QUIT: Exit the game'
 	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut.'
 	print 'TAKE: Take all the objects in the room'
-	#print 'USE (COM): Use an item in your inventory. Use the shortcut listed in the inventory to use it.'
+	#print 'OPEN: Opens a door/blocked location if you have the required item.'
 	print 'STOP: Stop and contemplate the view'  
 
 
@@ -113,6 +113,9 @@ def itemPickup(loc):
 	except AttributeError:
 		print 'There are no items in this location.'
 		return None
+
+def lockedOpen(loc, neededItem):
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'blockedLocation':
 
 
 if __name__ == '__main__':
