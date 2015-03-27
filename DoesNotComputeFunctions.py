@@ -118,7 +118,8 @@ def lockedOpen(loc, inv):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
 		if not DoesNotComputeLocations.locs[loc].getIsOpen():
 			if  DoesNotComputeLocations.locs[loc].getItemNeeded() in inv:
-				pass
+				DoesNotComputeLocations.locs[loc].makeOpen
+				print 'You can now move through this door.'
 			else:
 				print 'You do not have the key need to open this door.'
 		else:

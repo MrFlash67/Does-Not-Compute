@@ -102,6 +102,9 @@ class BlockedLocation(Location):
 		'Return a tuple of the integer locations that the player can go to.'
 		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
 		#And yes, I am insane.
+
+	def WheCanGoUnlocked(self):
+		return self.whereCanGoB
 	
 	def getName(self):
 		'Get a string name of the location'
@@ -110,15 +113,19 @@ class BlockedLocation(Location):
 	def getSpecialFeatures(self):
 		'Get the special features and attributes of a location in a string. Has no use in actual programming'
 		return self.specialFeatures
+
 	def getItemNeeded(self):
 		'Returns the item needed to progress'
 		return str(self.itemNeeded)
+
 	def makeOpen(self):
 		'Unlocks the BlockedLocation'
 		if invi in (self.itemNeeded):
 			self.open = True
+
 	def getIsOpen(self):
 		return self.open
+
 	def getLocType(self):
 		return 'BlockedLocation'
 
