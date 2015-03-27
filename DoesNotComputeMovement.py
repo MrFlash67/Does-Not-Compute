@@ -6,10 +6,10 @@ def goNorth(nowLoc):
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and not locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGo[0]
-		else:
+		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 			return locs[nowLoc].whereCanGoUnlocked[0]
+		else:
+			return locs[nowLoc].whereCanGo[0]
 		
 
 def goEast(nowLoc):
@@ -17,20 +17,20 @@ def goEast(nowLoc):
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and not locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGo[1]
-		else:
+		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 			return locs[nowLoc].whereCanGoUnlocked[1]
+		else:
+			return locs[nowLoc].whereCanGo[1]
 
 def goSouth(nowLoc):
 	if locs[nowLoc].whereCanGo[2] == -1:
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and not locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGo[2]
-		else:
+		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 			return locs[nowLoc].whereCanGoUnlocked[2]
+		else:
+			return locs[nowLoc].whereCanGo[2]
 
 def goWest(nowLoc):
 	#Where the skys are blue....
@@ -38,7 +38,7 @@ def goWest(nowLoc):
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and not locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGo[3]
-		else:
+		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 			return locs[nowLoc].whereCanGoUnlocked[3]
+		else:
+			return locs[nowLoc].whereCanGo[3]
