@@ -110,7 +110,7 @@ class BlockedLocation(Location):
 	def getSpecialFeatures(self):
 		'Get the special features and attributes of a location in a string. Has no use in actual programming'
 		return self.specialFeatures
-	def whatItemNeeded(self):
+	def getItemNeeded(self):
 		'Returns the item needed to progress'
 		return str(self.itemNeeded)
 	def makeOpen(self):

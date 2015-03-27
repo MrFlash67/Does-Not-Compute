@@ -51,7 +51,7 @@ def gameloop(invi, loopNum):
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'open':
-			pass
+			DoesNotComputeFunctions.lockedOpen(nowLoc, invi)
 			loopNum = countAdd(loopNum)
 		elif command == 'loopn':
 			print loopNum

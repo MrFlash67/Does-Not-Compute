@@ -114,10 +114,13 @@ def itemPickup(loc):
 		print 'There are no items in this location.'
 		return None
 
-def lockedOpen(loc, neededItem):
+def lockedOpen(loc, inv):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'blockedLocation':
 		if not DoesNotComputeLocations.locs[loc].getIsOpen():
-			if DoesNotComputeLocations.locs[loc].
+			if  DoesNotComputeLocations.locs[loc].getItemNeeded() in inv:
+				pass
+			else:
+				print 'You do not have the key need to open this door.'
 		else:
 			print 'The door is already open.'
 	else:
