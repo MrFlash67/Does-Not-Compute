@@ -34,19 +34,19 @@ def gameloop(invi, loopNum):
 			#loopNum = countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
-		elif command in ('go n', 'go north', 'n'):
+		elif command in ('go n', 'go north', 'n', 'move n'):
 			nowLoc = DoesNotComputeMovement.goNorth(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command in ('go s', 'go south', 's'):
+		elif command in ('go s', 'go south', 's', 'move s'):
 			nowLoc = DoesNotComputeMovement.goSouth(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command in ('go w', 'go west', 'w'):
+		elif command in ('go w', 'go west', 'w', 'move w'):
 			nowLoc = DoesNotComputeMovement.goWest(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command in ('go e', 'go east', 'e'):
+		elif command in ('go e', 'go east', 'e', 'move e'):
 			nowLoc = DoesNotComputeMovement.goEast(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
