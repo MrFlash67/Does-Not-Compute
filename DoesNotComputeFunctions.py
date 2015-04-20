@@ -1,5 +1,4 @@
 import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations
-#inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
@@ -68,10 +67,11 @@ def look(activeLocation):
 
 
 def whichWays(loc):
-	loc0 = loc.whereCanGo[0]
-	loc1 = loc.whereCanGo[1]
-	loc2 = loc.whereCanGo[2]
-	loc3 = loc.whereCanGo[3]
+	whereCanGo = loc.whereCanGo
+	loc0 = whereCanGo[0]
+	loc1 = whereCanGo[1]
+	loc2 = whereCanGo[2]
+	loc3 = whereCanGo[3]
 	loc = [loc0, loc1, loc2, loc3]
 	num = 0
 	for loc in loc:
@@ -118,7 +118,7 @@ def lockedOpen(loc, inv):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
 		if not DoesNotComputeLocations.locs[loc].getIsOpen():
 			if  DoesNotComputeLocations.locs[loc].getItemNeeded() in inv:
-				DoesNotComputeLocations.locs[loc].makeOpen
+				DoesNotComputeLocations.locs[loc].makeOpen()
 				print 'You can now move through this door.'
 			else:
 				print 'You do not have the key need to open this door.'
@@ -127,6 +127,13 @@ def lockedOpen(loc, inv):
 	else:
 		print 'There is nothing to unlock in this location'
 
-
+def getIsOpen(loc):
+		if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
+			if DoesNotComputeLocations.locs[loc].getIsOpen():
+				print 'TRUE'
+			else:
+				print 'FALSE'
+		else:
+			print 'WRONG LOCATION'
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])

@@ -74,19 +74,21 @@ class containerLocation(Location):
 
 	def getLocType(self):
 		return 'containerLocation'
+
 	def getHasItems(self):
 		return self.hasItems
+
 	def swapItems(self):
 		self.hasItems = False
 
 class BlockedLocation(Location):
-	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoB, itemNeeded):
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoUnlocked, itemNeeded):
 		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
-		self.whereCanGoB = whereCanGoB
+		self.whereCanGoUnlocked = whereCanGoUnlocked
 		self.itemNeeded = itemNeeded
 		self.open = False
 
@@ -104,7 +106,7 @@ class BlockedLocation(Location):
 		#And yes, I am insane.
 
 	def WheCanGoUnlocked(self):
-		return self.whereCanGoB
+		return self.whereCanGoUnlocked
 	
 	def getName(self):
 		'Get a string name of the location'
@@ -120,8 +122,7 @@ class BlockedLocation(Location):
 
 	def makeOpen(self):
 		'Unlocks the BlockedLocation'
-		if invi in (self.itemNeeded):
-			self.open = True
+		self.open = True
 
 	def getIsOpen(self):
 		return self.open

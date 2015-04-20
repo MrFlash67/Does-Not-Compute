@@ -51,7 +51,9 @@ def gameloop(invi, loopNum):
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'open':
+			DoesNotComputeFunctions.getIsOpen(nowLoc)
 			DoesNotComputeFunctions.lockedOpen(nowLoc, invi)
+			DoesNotComputeFunctions.getIsOpen(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'loopn':
 			print loopNum
@@ -72,6 +74,8 @@ def gameloop(invi, loopNum):
 			else:
 				print 'There are no items in this location.'
 			loopNum = countAdd(loopNum)
+		elif command == 'qopen':
+			DoesNotComputeFunctions.getIsOpen(nowLoc)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':

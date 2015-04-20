@@ -2,43 +2,51 @@ import DoesNotComputeCode, DoesNotComputeFunctions
 from DoesNotComputeLocations import locs
 activeLocation = 0
 def goNorth(nowLoc):
-	if locs[nowLoc].whereCanGo[0] == -1:
-		print 'You cannot go this way.'
-		return nowLoc
+	whereCanGo = locs[nowLoc].whereCanGo
+	print whereCanGo
+	print whereCanGo[0]
+	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
+		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		return whereCanGoUnlocked[0]
+	elif whereCanGo[0] == -1:
+			print 'You cannot go this way.'
+			return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGoUnlocked[0]
-		else:
-			return locs[nowLoc].whereCanGo[0]
+		return whereCanGo[0]
 		
 
 def goEast(nowLoc):
-	if locs[nowLoc].whereCanGo[1] == -1:
+	whereCanGo = locs[nowLoc].whereCanGo
+	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
+		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		return whereCanGoUnlocked[1]
+	elif whereCanGo[1] == -1:
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGoUnlocked[1]
-		else:
-			return locs[nowLoc].whereCanGo[1]
+		return whereCanGo[1]
+
 
 def goSouth(nowLoc):
-	if locs[nowLoc].whereCanGo[2] == -1:
+	whereCanGo = locs[nowLoc].whereCanGo
+	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
+		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		return whereCanGoUnlocked[2]
+	elif whereCanGo[2] == -1:
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGoUnlocked[2]
-		else:
-			return locs[nowLoc].whereCanGo[2]
+		return whereCanGo[2]
+
 
 def goWest(nowLoc):
-	#Where the skys are blue....
-	if locs[nowLoc].whereCanGo[3] == -1:
+	#Where the skys are blue...
+	whereCanGo = locs[nowLoc].whereCanGo
+	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
+		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		return locs[nowLoc].whereCanGoUnlocked[3]
+	elif whereCanGo[3] == -1:
 		print 'You cannot go this way.'
 		return nowLoc
 	else:
-		if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
-			return locs[nowLoc].whereCanGoUnlocked[3]
-		else:
-			return locs[nowLoc].whereCanGo[3]
+		return whereCanGo[3]
