@@ -76,6 +76,8 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == 'qopen':
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
+		elif command == 'get ye flask':
+			print 'Ye can\'t get ye flask!'
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':

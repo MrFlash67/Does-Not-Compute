@@ -7,6 +7,7 @@ def goNorth(nowLoc):
 	print whereCanGo[0]
 	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		print whereCanGoUnlocked
 		return whereCanGoUnlocked[0]
 	elif whereCanGo[0] == -1:
 			print 'You cannot go this way.'
@@ -19,6 +20,7 @@ def goEast(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
 	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		print whereCanGoUnlocked
 		return whereCanGoUnlocked[1]
 	elif whereCanGo[1] == -1:
 		print 'You cannot go this way.'
@@ -31,6 +33,7 @@ def goSouth(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
 	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		print whereCanGoUnlocked
 		return whereCanGoUnlocked[2]
 	elif whereCanGo[2] == -1:
 		print 'You cannot go this way.'
@@ -44,6 +47,7 @@ def goWest(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
 	if locs[nowLoc].getLocType == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked()
+		print whereCanGoUnlocked
 		return locs[nowLoc].whereCanGoUnlocked[3]
 	elif whereCanGo[3] == -1:
 		print 'You cannot go this way.'
