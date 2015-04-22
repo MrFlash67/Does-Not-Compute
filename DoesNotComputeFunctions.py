@@ -56,11 +56,6 @@ def exit():
 	sys.exit()
 
 
-def printDesc():
-	'''Gets the description of a location.'''
-	print str(inUseLocation.getDesc())
-
-
 def look(activeLocation):
 	'''Observes the surroundings'''
 	print DoesNotComputeLocations.locs[activeLocation].getDesc()
@@ -131,8 +126,10 @@ def getIsOpen(loc):
 		if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
 			if DoesNotComputeLocations.locs[loc].getIsOpen():
 				print 'TRUE'
+				return True
 			else:
 				print 'FALSE'
+				return False
 		else:
 			print 'WRONG LOCATION'
 if __name__ == '__main__':

@@ -76,6 +76,9 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 		elif command == 'qopen':
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
+		elif command == 'unlocked':
+			if locs[nowLoc].getLocType() == 'BlockedLocation':
+				print str(locs[nowLoc].whereCanGoUnlocked)
 		elif command == 'get ye flask':
 			print 'Ye can\'t get ye flask!'
 		else:

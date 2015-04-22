@@ -105,7 +105,7 @@ class BlockedLocation(Location):
 		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
 		#And yes, I am insane.
 
-	def WheCanGoUnlocked(self):
+	def whereCanGoUnlocked(self):
 		return self.whereCanGoUnlocked
 	
 	def getName(self):
