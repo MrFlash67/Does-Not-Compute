@@ -1,5 +1,4 @@
 import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations
-#inUseLocation = DoesNotComputeClasses.getCurrentLocation()
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
@@ -30,12 +29,10 @@ def listStuff(l):
 			text = str(s)
 			#print text + '1'
 		else:
-			text = text + ', ' + str(s)
+			text = text + ' and a ' + str(s)
 			#print text + '2'
 		
 	return str(text)
-
-
 
 def showHelp():
 	'''The help display.'''
@@ -48,8 +45,8 @@ def showHelp():
 	#print 'LOAD: Loads your save'
 	print 'QUIT: Exit the game'
 	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut.'
-	#print 'TAKE: Take all the objects in the room'
-	#print 'USE (COM): Use an item in your inventory. Use the shortcut listed in the inventory to use it.'
+	print 'TAKE: Take all the objects in the room'
+	#print 'OPEN: Opens a door/blocked location if you have the required item.'
 	print 'STOP: Stop and contemplate the view'  
 
 
@@ -59,24 +56,20 @@ def exit():
 	sys.exit()
 
 
-def printDesc():
-	'''Gets the description of a location.'''
-	print str(inUseLocation.getDesc())
-
-
 def look(activeLocation):
 	'''Observes the surroundings'''
 	print DoesNotComputeLocations.locs[activeLocation].getDesc()
 
 
-def whichWays(locs):
-	locs0 = locs.whereCanGo[0]
-	locs1 = locs.whereCanGo[1]
-	locs2 = locs.whereCanGo[2]
-	locs3 = locs.whereCanGo[3]
-	locs = [locs0, locs1, locs2, locs3]
+def whichWays(loc):
+	whereCanGo = loc.whereCanGo
+	loc0 = whereCanGo[0]
+	loc1 = whereCanGo[1]
+	loc2 = whereCanGo[2]
+	loc3 = whereCanGo[3]
+	loc = [loc0, loc1, loc2, loc3]
 	num = 0
-	for loc in locs:
+	for loc in loc:
 		if num == 0:
 			way = 'North'
 		elif num == 1:
@@ -94,7 +87,50 @@ def whichWays(locs):
 		#print num
 
 def itemInfo(loc):
-	pass
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation' and DoesNotComputeLocations.locs[loc].getHasItems():
+		print 'There is ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' lying on the floor.'
+	else:
+		print 'There are no items in this location.'
 
+def itemTF(loc):
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'containerLocation':
+		return True
+	else:
+		return False
+
+def itemPickup(loc):
+	try:
+		print 'You now have ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' in your inventory.'
+		return DoesNotComputeLocations.locs[loc].getItems()
+	except TypeError:
+		print 'There are no items in this location.'
+		return None
+	except AttributeError:
+		print 'There are no items in this location.'
+		return None
+
+def lockedOpen(loc, inv):
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
+		if not DoesNotComputeLocations.locs[loc].getIsOpen():
+			if  DoesNotComputeLocations.locs[loc].getItemNeeded() in inv:
+				DoesNotComputeLocations.locs[loc].makeOpen()
+				print 'You can now move through this door.'
+			else:
+				print 'You do not have the key need to open this door.'
+		else:
+			print 'The door is already open.'
+	else:
+		print 'There is nothing to unlock in this location'
+
+def getIsOpen(loc):
+		if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
+			if DoesNotComputeLocations.locs[loc].getIsOpen():
+				print 'TRUE'
+				return True
+			else:
+				print 'FALSE'
+				return False
+		else:
+			print 'WRONG LOCATION'
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
