@@ -46,7 +46,7 @@ def showHelp():
 	print 'QUIT: Exit the game'
 	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut.'
 	print 'TAKE: Take all the objects in the room'
-	#print 'OPEN: Opens a door/blocked location if you have the required item.'
+	print 'OPEN: Opens a door/blocked location if you have the required item.'
 	print 'STOP: Stop and contemplate the view'  
 
 
