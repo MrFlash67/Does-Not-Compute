@@ -37,17 +37,18 @@ def listStuff(l):
 def showHelp():
 	'''The help display.'''
 	'''Uncomment lines when implimented'''
-	print 'All commands are case-insensitive.'
+	print 'All commands are case-insensitive'
 	print 'HELP: Display help'
 	print 'LOOK: Get a description of your surroundings'
 	print 'GO n/s/e/w: Move about in the world'
 	#print 'SAVE: Saves and exits your game'
 	#print 'LOAD: Loads your save'
 	print 'QUIT: Exit the game'
-	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut.'
+	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut'
 	print 'TAKE: Take all the objects in the room'
-	print 'OPEN: Opens a door/blocked location if you have the required item.'
-	print 'STOP: Stop and contemplate the view'  
+	print 'OPEN: Opens a door/blocked location if you have the required item'
+	print 'STOP: Stop and contemplate the view'
+	print 'ATTACK: Attack the nearby monster'  
 
 
 def exit():
@@ -132,5 +133,12 @@ def getIsOpen(loc):
 				return False
 		else:
 			print 'WRONG LOCATION'
+
+
+
+def attack(loc, turn):
+	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
+		print DoesNotComputeLocations.locs[loc].attack(turn)
+
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])

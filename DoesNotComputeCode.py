@@ -81,6 +81,8 @@ def gameloop(invi, loopNum):
 				print str(locs[nowLoc].whereCanGoUnlocked)
 		elif command == 'get ye flask':
 			print 'Ye can\'t get ye flask!'
+		elif command == 'attack':
+			DoesNotComputeFunctions.attack(nowLoc, loopNum)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':

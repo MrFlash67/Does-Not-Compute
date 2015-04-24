@@ -18,7 +18,8 @@ def goNorth(nowLoc):
 		
 
 def goEast(nowLoc):
-	whereCanGo = locs[nowLoc].whereCanGo	if locs[nowLoc].getLocType() == 'BlockedLocation' and locs[nowLoc].getIsOpen():
+	whereCanGo = locs[nowLoc].whereCanGo
+	if locs[nowLoc].getLocType() == 'BlockedLocation' and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
 		if whereCanGoUnlocked[1] == -1:
 			print 'You cannot go this way.'

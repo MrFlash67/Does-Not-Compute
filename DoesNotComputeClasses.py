@@ -162,11 +162,12 @@ class BossLocation(Location): #All below TBI
 	def getSpecialFeatures(self):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
-		
+
 	def attack(self, turn):
-		if turn == self.startTurn or turn == self.startTurn + 1:
+		print turn
+		if turn < self.startTurn + 7:
 			return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
-		elif turn == self.startTurn + 2:
+		elif turn >= self.startTurn + 7:
 			return 'He dies from Sudden Death Syndrome.\nYou win.'
 		else:
 			return 'You broke it!'
