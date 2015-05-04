@@ -140,5 +140,8 @@ def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)
 
+def gameOver():
+	pass
+
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])

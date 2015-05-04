@@ -133,7 +133,7 @@ class BlockedLocation(Location):
 class BossLocation(Location): #All below TBI
 	'''Class for the boss'''
 	locID = 0
-	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName, startTurn):
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName, startTurn, exitFunction):
 		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
@@ -141,6 +141,8 @@ class BossLocation(Location): #All below TBI
 		self.specialFeatures = specialFeatures
 		self.bossName = bossName
 		self.startTurn = startTurn
+		self.exitFunction = exitFunction
+		self.alive = True
 	
 	def getDesc(self):
 		'''Get the description for the area'''
