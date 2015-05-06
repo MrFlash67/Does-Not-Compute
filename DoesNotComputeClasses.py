@@ -166,12 +166,15 @@ class BossLocation(Location): #All below TBI
 		return self.specialFeatures
 
 	def attack(self, turn):
-		print turn
-		if turn < self.startTurn + 7:
-			return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
-		elif turn >= self.startTurn + 7:
-			return 'He dies from Sudden Death Syndrome.\nYou win.'
+		if self.alive == True:
+			if turn < self.startTurn + 7:
+				return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
+			elif turn >= self.startTurn + 7:
+				self.alive = False
+				return 'He dies from Sudden Death Syndrome.\nYou win.'
+			else:
+				return 'You broke it!'
 		else:
-			return 'You broke it!'
+			print 'He\'s dead, Jim! You can stop bothering him, let him sleep'
 	def getLocType(self):
 		return 'BossLocation'
