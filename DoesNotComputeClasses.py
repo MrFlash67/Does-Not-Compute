@@ -1,4 +1,4 @@
-import time, string, os
+import time, string, os, sys
 
 class Location(object):
 	'''Class for the locations'''
@@ -133,14 +133,16 @@ class BlockedLocation(Location):
 class BossLocation(Location): #All below TBI
 	'''Class for the boss'''
 	locID = 0
-	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName, startTurn):
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName):
 		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
 		self.bossName = bossName
-		self.startTurn = startTurn
+		self.alive = True
+		self.startTurn = 0
+		self.open = False
 	
 	def getDesc(self):
 		'''Get the description for the area'''
@@ -150,7 +152,7 @@ class BossLocation(Location): #All below TBI
 		'''Find out its location in a integer.'''
 		return self.locID
 	
-	def whereCanGo(self):
+	def whereCanGoUnlocked(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
 		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
 		#And yes, I am insane.
@@ -162,12 +164,29 @@ class BossLocation(Location): #All below TBI
 	def getSpecialFeatures(self):
 		'''Get the special features and attributes of a location in a string. Has no use in actual programming'''
 		return self.specialFeatures
+
 	def attack(self, turn):
-		if turn == self.startTurn or turn == self.startTurn + 1:
-			return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
-		elif turn == self.startTurn + 2:
-			return 'He dies from Sudden Death Syndrome.\nYou win.'
+		if self.startTurn == 0:
+			self.startTurn = turn + 1
+			print 'turn changed'
+		if self.alive == True:
+			if turn < self.startTurn:
+				print self.startTurn
+				return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
+			elif turn >= self.startTurn:
+				print self.startTurn
+				self.alive = False
+				print 'He dies from Sudden Death Syndrome.\nYou win.'
+				print 'You have won.\nWell done.\nYou have scored 1 million out of a possible 10 points.'
+				sys.exit()
+			else:
+				return 'You broke it!'
 		else:
-			return 'You broke it!'
+			print 'He\'s dead, Jim! You can stop bothering him, let him sleep'
+
+
+	def getIsOpen(self):
+		return self.open
+
 	def getLocType(self):
 		return 'BossLocation'
