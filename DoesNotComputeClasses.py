@@ -167,13 +167,13 @@ class BossLocation(Location): #All below TBI
 
 	def attack(self, turn):
 		if self.startTurn == 0:
-			self.startTurn = turn
+			self.startTurn = turn + 1
 			print 'turn changed'
 		if self.alive == True:
 			if turn < self.startTurn:
 				print self.startTurn
 				return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
-			elif turn >= self.startTurn + 1:
+			elif turn >= self.startTurn:
 				print self.startTurn
 				self.alive = False
 				return 'He dies from Sudden Death Syndrome.\nYou win.'
