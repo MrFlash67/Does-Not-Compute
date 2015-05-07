@@ -143,7 +143,6 @@ class BossLocation(Location): #All below TBI
 		self.exitFunction = exitFunction
 		self.alive = True
 		self.startTurn = 0
-		self.turnAdded = false
 	
 	def getDesc(self):
 		'''Get the description for the area'''
@@ -168,11 +167,14 @@ class BossLocation(Location): #All below TBI
 
 	def attack(self, turn):
 		if self.startTurn == 0:
-			pass
+			self.startTurn = turn
+			print 'turn changed'
 		if self.alive == True:
 			if turn < self.startTurn:
+				print self.startTurn
 				return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
-			elif turn >= self.startTurn:
+			elif turn >= self.startTurn + 1:
+				print self.startTurn
 				self.alive = False
 				return 'He dies from Sudden Death Syndrome.\nYou win.'
 			else:
