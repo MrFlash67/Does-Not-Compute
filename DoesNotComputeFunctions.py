@@ -141,7 +141,8 @@ def attack(loc, turn):
 		print DoesNotComputeLocations.locs[loc].attack(turn)
 
 def gameOver():
-	pass
+	print 'You have won.\n Well done.\nYou have scored 1 million out of a possible 10 points.'
+	sys.exit()
 
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
