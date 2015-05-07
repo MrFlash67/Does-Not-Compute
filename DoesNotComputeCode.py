@@ -50,14 +50,14 @@ def gameloop(invi, loopNum):
 			nowLoc = DoesNotComputeMovement.goEast(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command == 'open':
+		elif command == 'open' or command == 'use':
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
 			DoesNotComputeFunctions.lockedOpen(nowLoc, invi)
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'loopn':
 			print loopNum
-		elif command == 'stop':
+		elif command == 'stop' or command == 'wait':
 			print 'You stop and admire the view'
 			loopNum = countAdd(loopNum)
 		elif command == "exits":
@@ -70,18 +70,13 @@ def gameloop(invi, loopNum):
 					invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
 					locs[nowLoc].swapItems()
 				else:
-					print 'You have already took all the items in this area.'
+					print 'You have already taken all the items in this area.'
 			else:
 				print 'There are no items in this location.'
 			loopNum = countAdd(loopNum)
-		elif command == 'qopen':
-			DoesNotComputeFunctions.getIsOpen(nowLoc)
-		elif command == 'unlocked':
-			if locs[nowLoc].getLocType() == 'BlockedLocation':
-				print str(locs[nowLoc].whereCanGoUnlocked)
 		elif command == 'get ye flask':
 			print 'Ye can\'t get ye flask!'
-		elif command == 'attack':
+		elif command == 'attack' or command == 'fight':
 			DoesNotComputeFunctions.attack(nowLoc, loopNum)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
