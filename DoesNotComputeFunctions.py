@@ -126,10 +126,8 @@ def lockedOpen(loc, inv):
 def getIsOpen(loc):
 		if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
 			if DoesNotComputeLocations.locs[loc].getIsOpen():
-				print 'TRUE'
 				return True
 			else:
-				print 'FALSE'
 				return False
 		else:
 			print 'WRONG LOCATION'
@@ -139,10 +137,6 @@ def getIsOpen(loc):
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)
-
-def gameOver():
-	print 'You have won.\n Well done.\nYou have scored 1 million out of a possible 10 points.'
-	sys.exit()
 
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
