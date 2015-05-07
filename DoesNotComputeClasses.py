@@ -133,16 +133,17 @@ class BlockedLocation(Location):
 class BossLocation(Location): #All below TBI
 	'''Class for the boss'''
 	locID = 0
-	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName, startTurn, exitFunction):
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName, exitFunction):
 		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
 		self.bossName = bossName
-		self.startTurn = startTurn
 		self.exitFunction = exitFunction
 		self.alive = True
+		self.startTurn = 0
+		self.turnAdded = false
 	
 	def getDesc(self):
 		'''Get the description for the area'''
@@ -166,10 +167,12 @@ class BossLocation(Location): #All below TBI
 		return self.specialFeatures
 
 	def attack(self, turn):
+		if self.startTurn == 0:
+			pass
 		if self.alive == True:
-			if turn < self.startTurn + 7:
+			if turn < self.startTurn:
 				return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
-			elif turn >= self.startTurn + 7:
+			elif turn >= self.startTurn:
 				self.alive = False
 				return 'He dies from Sudden Death Syndrome.\nYou win.'
 			else:
