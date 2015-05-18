@@ -136,7 +136,7 @@ class BossLocation(Location): #All below TBI
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName):
 		self.locID = locID
 		self.desc = desc
-		#self.whereCanGo = whereCanGo
+		self.whereCanGo = [-1, -1 , -1, -1]
 		self.whereCanGoUnlocked = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
@@ -158,7 +158,7 @@ class BossLocation(Location): #All below TBI
 		#And yes, I am insane.
 	def whereCanGo(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
-		return [-1, -1, -1, -1] #Do NOT put in a print statement without doing some magic formatting!!!
+		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
 		#And yes, I am insane.
 	
 	def getName(self):

@@ -63,11 +63,12 @@ def look(activeLocation):
 
 
 def whichWays(loc):
-	whereCanGo = loc.whereCanGo
-	loc0 = whereCanGo[0]
-	loc1 = whereCanGo[1]
-	loc2 = whereCanGo[2]
-	loc3 = whereCanGo[3]
+	moveLocs = loc.whereCanGo
+	print moveLocs
+	loc0 = moveLocs[0]
+	loc1 = moveLocs[1]
+	loc2 = moveLocs[2]
+	loc3 = moveLocs[3]
 	loc = [loc0, loc1, loc2, loc3]
 	num = 0
 	for loc in loc:
