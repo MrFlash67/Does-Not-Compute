@@ -124,7 +124,7 @@ def lockedOpen(loc, inv):
 		print 'There is nothing to unlock in this location'
 
 def getIsOpen(loc):
-		if DoesNotComputeLocations.locs[loc].getLocType() == 'BlockedLocation':
+		if DoesNotComputeLocations.locs[loc].getLocType() in ('BlockedLocation', 'BossLocation'):
 			if DoesNotComputeLocations.locs[loc].getIsOpen():
 				return True
 			else:

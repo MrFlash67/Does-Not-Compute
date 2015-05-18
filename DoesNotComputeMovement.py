@@ -3,8 +3,10 @@ from DoesNotComputeLocations import locs
 activeLocation = 0
 def goNorth(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
-	if locs[nowLoc].getLocType() == 'BlockedLocation' or locs[nowLoc].getLocType() == 'BossLocation' and locs[nowLoc].getIsOpen():
+	print locs[nowLoc].getLocType()
+	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and DoesNotComputeFunctions.getIsOpen(nowLoc):
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
+		print whereCanGoUnlocked
 		if whereCanGoUnlocked[0] == -1:
 			print 'You cannot go this way.'
 			return nowLoc
@@ -19,7 +21,8 @@ def goNorth(nowLoc):
 
 def goEast(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
-	if locs[nowLoc].getLocType() == 'BlockedLocation' or locs[nowLoc].getLocType() == 'BossLocation' and locs[nowLoc].getIsOpen():
+	print locs[nowLoc].getLocType()
+	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
 		if whereCanGoUnlocked[1] == -1:
 			print 'You cannot go this way.'
@@ -35,7 +38,8 @@ def goEast(nowLoc):
 
 def goSouth(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
-	if locs[nowLoc].getLocType() == 'BlockedLocation' or locs[nowLoc].getLocType() == 'BossLocation' and locs[nowLoc].getIsOpen():
+	print locs[nowLoc].getLocType()
+	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
 		if whereCanGoUnlocked[2] == -1:
 			print 'You cannot go this way.'
@@ -52,7 +56,8 @@ def goSouth(nowLoc):
 def goWest(nowLoc):
 	#Where the skys are blue...
 	whereCanGo = locs[nowLoc].whereCanGo
-	if locs[nowLoc].getLocType() == 'BlockedLocation' or locs[nowLoc].getLocType() == 'BossLocation' and locs[nowLoc].getIsOpen():
+	print locs[nowLoc].getLocType()
+	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
 		if whereCanGoUnlocked[3] == -1:
 			print 'You cannot go this way.'

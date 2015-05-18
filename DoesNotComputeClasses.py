@@ -136,13 +136,13 @@ class BossLocation(Location): #All below TBI
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, bossName):
 		self.locID = locID
 		self.desc = desc
-		self.whereCanGo = whereCanGo
+		#self.whereCanGo = whereCanGo
+		self.whereCanGoUnlocked = whereCanGo
 		self.name = name
 		self.specialFeatures = specialFeatures
 		self.bossName = bossName
 		self.alive = True
 		self.startTurn = 0
-		self.open = False
 	
 	def getDesc(self):
 		'''Get the description for the area'''
@@ -154,7 +154,11 @@ class BossLocation(Location): #All below TBI
 	
 	def whereCanGoUnlocked(self):
 		'''Return a tuple of the integer locations that the player can go to.'''
-		return self.whereCanGo #Do NOT put in a print statement without doing some magic formatting!!!
+		return self.whereCanGoUnlocked #Do NOT put in a print statement without doing some magic formatting!!!
+		#And yes, I am insane.
+	def whereCanGo(self):
+		'''Return a tuple of the integer locations that the player can go to.'''
+		return [-1, -1, -1, -1] #Do NOT put in a print statement without doing some magic formatting!!!
 		#And yes, I am insane.
 	
 	def getName(self):
@@ -175,7 +179,7 @@ class BossLocation(Location): #All below TBI
 				self.alive = False
 				print 'He dies from Sudden Death Syndrome.\nYou win.\n\n'
 				print 'You have won.\nWell done.\nYou have scored 1 million out of a possible 10 points.'
-				sys.exit()
+				#sys.exit()
 			else:
 				return 'You broke it!'
 		else:
@@ -183,7 +187,13 @@ class BossLocation(Location): #All below TBI
 
 
 	def getIsOpen(self):
-		return self.open
+		if self.alive:
+			print 'alive'
+			return False
+		else:
+			print 'not alive'
+			return True
+			
 
 	def getLocType(self):
 		return 'BossLocation'
