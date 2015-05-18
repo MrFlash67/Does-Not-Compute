@@ -2,7 +2,7 @@ import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeL
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
-	time.sleep(3)
+	time.sleep(2)
 	print '''
 ______                  _   _       _     _____                             _       
 |  _  \                | \ | |     | |   /  __ \                           | |      
@@ -44,7 +44,7 @@ def showHelp():
 	#print 'SAVE: Saves and exits your game'
 	#print 'LOAD: Loads your save'
 	print 'QUIT: Exit the game'
-	print 'I or INV or INVENTORY: Display your inventory. Stuff in brackets (like this) next to the listing is a shortcut'
+	print 'I or INV or INVENTORY: Display your inventory.'
 	print 'TAKE: Take all the objects in the room'
 	print 'OPEN: Opens a door/blocked location if you have the required item'
 	print 'STOP: Stop and contemplate the view'
@@ -64,7 +64,6 @@ def look(activeLocation):
 
 def whichWays(loc):
 	moveLocs = loc.whereCanGo
-	print moveLocs
 	loc0 = moveLocs[0]
 	loc1 = moveLocs[1]
 	loc2 = moveLocs[2]

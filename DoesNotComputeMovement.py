@@ -3,10 +3,8 @@ from DoesNotComputeLocations import locs
 activeLocation = 0
 def goNorth(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
-	print locs[nowLoc].getLocType()
 	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and DoesNotComputeFunctions.getIsOpen(nowLoc):
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
-		print whereCanGoUnlocked
 		if whereCanGoUnlocked[0] == -1:
 			print 'You cannot go this way.'
 			return nowLoc
@@ -21,7 +19,6 @@ def goNorth(nowLoc):
 
 def goEast(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
-	print locs[nowLoc].getLocType()
 	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
 		if whereCanGoUnlocked[1] == -1:
@@ -38,7 +35,6 @@ def goEast(nowLoc):
 
 def goSouth(nowLoc):
 	whereCanGo = locs[nowLoc].whereCanGo
-	print locs[nowLoc].getLocType()
 	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
 		if whereCanGoUnlocked[2] == -1:
@@ -56,7 +52,6 @@ def goSouth(nowLoc):
 def goWest(nowLoc):
 	#Where the skys are blue...
 	whereCanGo = locs[nowLoc].whereCanGo
-	print locs[nowLoc].getLocType()
 	if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation') and locs[nowLoc].getIsOpen():
 		whereCanGoUnlocked = locs[nowLoc].whereCanGoUnlocked
 		if whereCanGoUnlocked[3] == -1:

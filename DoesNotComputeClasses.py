@@ -179,19 +179,17 @@ class BossLocation(Location): #All below TBI
 				self.alive = False
 				print 'He dies from Sudden Death Syndrome.\nYou win.\n\n'
 				print 'You have won.\nWell done.\nYou have scored 1 million out of a possible 10 points.'
-				#sys.exit()
+				sys.exit()
 			else:
-				return 'You broke it!'
+				print 'You broke it!'
 		else:
 			print 'He\'s dead, Jim! You can stop bothering him, let him sleep'
 
 
 	def getIsOpen(self):
 		if self.alive:
-			print 'alive'
 			return False
 		else:
-			print 'not alive'
 			return True
 			
 
