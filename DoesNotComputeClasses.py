@@ -37,7 +37,7 @@ class Location(object):
 class containerLocation(Location):
 	'''Holds items'''
 	
-	def __init__(self, whatItems, locID, desc, whereCanGo, name, specialFeatures):
+	def __init__(self, whatItems, locID, desc, whereCanGo, name, specialFeatures, descNoItems):
 		self.whatItems = whatItems
 		self.locID = locID
 		self.desc = desc
@@ -45,6 +45,7 @@ class containerLocation(Location):
 		self.name = name
 		self.specialFeatures = specialFeatures
 		self.hasItems = True
+		self.descNoItems = descNoItems
 
 	def getItems(self):
 		'''Get a list of the items here'''
@@ -53,7 +54,10 @@ class containerLocation(Location):
 	
 	def getDesc(self):
 		'''Get the description for the area'''
-		return self.desc
+		if self.hasItems:
+			return self.desc
+		else:
+			return self.descNoItems
 	
 	def getNumLocation(self):
 		'''Find out its location in a integer.'''
