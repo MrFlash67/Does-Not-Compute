@@ -6,7 +6,7 @@ def countAdd(loopNum):
 def look(loc):
 	DoesNotComputeFunctions.look(loc)
 	DoesNotComputeFunctions.whichWays(locs[loc])
-	if locs[loc].getLocType() == 'BlockedLocation':
+	if locs[loc].getLocType() in ('BlockedLocation', 'BossLocation'):
 		if not locs[loc].getIsOpen:
 			print 'You can move through here'
 		else:
@@ -34,54 +34,49 @@ def gameloop(invi, loopNum):
 			#loopNum = countAdd(loopNum)
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
-		elif command in ('go n', 'go north', 'n', 'move n'):
+		elif command in ('north', 'go n', 'go north', 'n', 'move n', 'move north'):
 			nowLoc = DoesNotComputeMovement.goNorth(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command in ('go s', 'go south', 's', 'move s'):
+		elif command in ('south', 'go s', 'go south', 's', 'move s', 'move south'):
 			nowLoc = DoesNotComputeMovement.goSouth(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command in ('go w', 'go west', 'w', 'move w'):
+		elif command in ('west', 'go w', 'go west', 'w', 'move w', 'move west'):
 			nowLoc = DoesNotComputeMovement.goWest(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command in ('go e', 'go east', 'e', 'move e'):
+		elif command in ('east', 'go e', 'go east', 'e', 'move e', 'move east'):
 			nowLoc = DoesNotComputeMovement.goEast(nowLoc)
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
-		elif command == 'open':
+		elif command in ('open', 'use', 'unlock'):
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
 			DoesNotComputeFunctions.lockedOpen(nowLoc, invi)
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
 			loopNum = countAdd(loopNum)
 		elif command == 'loopn':
 			print loopNum
-		elif command == 'stop':
+		elif command in ('stop', 'wait'):
 			print 'You stop and admire the view'
 			loopNum = countAdd(loopNum)
 		elif command == "exits":
 			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 		elif command == 'items' or command == 'ii':
 			DoesNotComputeFunctions.itemInfo(nowLoc)
-		elif command == 'take':
+		elif command in ('take', 'get'):
 			if DoesNotComputeFunctions.itemTF(nowLoc):
 				if locs[nowLoc].getHasItems():
 					invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
 					locs[nowLoc].swapItems()
 				else:
-					print 'You have already took all the items in this area.'
+					print 'You have already taken all the items in this area.'
 			else:
 				print 'There are no items in this location.'
 			loopNum = countAdd(loopNum)
-		elif command == 'qopen':
-			DoesNotComputeFunctions.getIsOpen(nowLoc)
-		elif command == 'unlocked':
-			if locs[nowLoc].getLocType() == 'BlockedLocation':
-				print str(locs[nowLoc].whereCanGoUnlocked)
 		elif command == 'get ye flask':
 			print 'Ye can\'t get ye flask!'
-		elif command == 'attack':
+		elif command == 'attack' or command == 'fight':
 			DoesNotComputeFunctions.attack(nowLoc, loopNum)
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
