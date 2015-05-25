@@ -27,7 +27,7 @@ def gameloop(invi, loopNum):
 		elif command in ('quit', 'exit', 'leave'):
 			DoesNotComputeFunctions.exit()
 		elif command == 'save':
-			print DoesNotComputeFunctions.getInfo(nowLoc)
+			print DoesNotComputeFunctions.getInfo(nowLoc, invi)
 			#loopNum = countAdd(loopNum)
 		elif command == 'load':
 			pass

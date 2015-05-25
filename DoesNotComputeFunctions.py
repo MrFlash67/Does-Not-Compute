@@ -133,9 +133,9 @@ def getIsOpen(loc):
 			print 'WRONG LOCATION'
 
 
-def getInfo(loc):
+def getInfo(loc, inventory):
 	locID = DoesNotComputeLocations.locs[loc].getLocID()
-	return locID
+	return (locID, inventory)
 
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
