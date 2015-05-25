@@ -2,7 +2,6 @@ import time, string, os, sys
 
 class Location(object):
 	'''Class for the locations'''
-	locID = 0
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures):
 		self.locID = locID
 		self.desc = desc
@@ -14,7 +13,7 @@ class Location(object):
 		'''Get the description for the area'''
 		return self.desc
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'''Find out its location in a integer.'''
 		return self.locID
 	
@@ -59,7 +58,7 @@ class containerLocation(Location):
 		else:
 			return self.descNoItems
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'''Find out its location in a integer.'''
 		return self.locID
 	
@@ -100,7 +99,7 @@ class BlockedLocation(Location):
 		'Get the description for the area'
 		return self.desc
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'Find out its location in a integer.'
 		return self.locID
 	
@@ -152,7 +151,7 @@ class BossLocation(Location): #All below TBI
 		'''Get the description for the area'''
 		return self.desc + "\nIt contains a massive monster called " + self.bossName + " who wants to kill you.\nGood luck."
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'''Find out its location in a integer.'''
 		return self.locID
 	

@@ -78,6 +78,9 @@ def gameloop(invi, loopNum):
 			print 'Ye can\'t get ye flask!'
 		elif command == 'attack' or command == 'fight':
 			DoesNotComputeFunctions.attack(nowLoc, loopNum)
+		elif command == 'save':
+			print 'hey!'
+			print str(DoesNotComputeFunctions.getInfo(nowLoc))
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
