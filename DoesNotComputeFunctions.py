@@ -134,8 +134,7 @@ def getIsOpen(loc):
 
 
 def getInfo(loc):
-	locs = DoesNotComputeLocations.locs[loc]
-	locs.getLocID
+	locID = DoesNotComputeLocations.locs[loc].getLocID()
 	print locID
 	return locID
 
