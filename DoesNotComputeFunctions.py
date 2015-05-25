@@ -135,7 +135,6 @@ def getIsOpen(loc):
 
 def getInfo(loc):
 	locID = DoesNotComputeLocations.locs[loc].getLocID()
-	print locID
 	return locID
 
 def attack(loc, turn):
