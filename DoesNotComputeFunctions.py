@@ -1,4 +1,4 @@
-import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations
+import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations, pickle
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
@@ -135,8 +135,13 @@ def getIsOpen(loc):
 
 def getInfo(loc, inventory):
 	locID = DoesNotComputeLocations.locs[loc].getLocID()
-	return (locID, inventory)
+	return {'location':locID, 'inventory':inventory}
 
+def save(info):
+	with open('save.txt', 'w') as f:
+		pickle.dump(info, f)
+		print 'Saved.'
+			
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)
