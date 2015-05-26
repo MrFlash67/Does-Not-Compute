@@ -10,8 +10,10 @@ BossLocation(4, 'You are in an arena.', [1,2,3,4], 'Arena', 'Has a boss.', 'King
 
 if __name__ == '__main__':
 	print "Name is main!"
-	print locs[0].getDesc()
-	print locs[1].getDesc()
-	print locs[2].getDesc()
-	print locs[3].getDesc()
-	print locs[4].getDesc()
+	for x in locs:
+		print x.returnLocationData()
+	#print locs[0].returnLocationData()
+	#print locs[1].returnLocationData()
+	#print locs[2].returnLocationData()
+	#print locs[3].returnLocationData()
+	#print locs[4].returnLocationData()
