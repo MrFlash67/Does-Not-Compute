@@ -138,10 +138,14 @@ def getInfo(loc, inventory):
 	return {'location':locID, 'inventory':inventory}
 
 def save(info):
-	with open('save.txt', 'w') as f:
-		pickle.dump(info, f)
+	with open('save.txt', 'w') as data:
+		pickle.dump(info, data)
 		print 'Saved.'
 			
+def load():
+	with open('save.txt', 'rb') as data:
+		info = pickle.load(data)
+		return info
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)
