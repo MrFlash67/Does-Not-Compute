@@ -135,10 +135,13 @@ def getIsOpen(loc):
 
 def getInfo(loc, inventory):
 	locID = DoesNotComputeLocations.locs[loc].getLocID()
-	return {'location':locID, 'inventory':inventory}
+	return [{'location':locID, 'inventory':inventory}]
 
 def save(info):
+	for x in DoesNotComputeLocations.locs:
+		info.append(x.returnLocationData())
 	with open('save.txt', 'w') as data:
+		print info
 		pickle.dump(info, data)
 		print 'Saved.'
 			
