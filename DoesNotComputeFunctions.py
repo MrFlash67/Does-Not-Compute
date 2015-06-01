@@ -148,8 +148,11 @@ def save(info):
 def load():
 	with open('save.txt', 'rb') as data:
 		info = pickle.load(data)
-		for x in data:
+		i = 0
+		for x in info[1:]:
 			print x
+			DoesNotComputeLocations.locs[i].load(x)
+			i = i + 1
 		return info
 	
 	

@@ -35,7 +35,7 @@ class Location(object):
 	
 	def returnLocationData(self):
 		return [{'type':'Location'}]
-	def load(self):
+	def load(self, info):
 		pass
 
 class containerLocation(Location):
