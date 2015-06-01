@@ -35,6 +35,8 @@ class Location(object):
 	
 	def returnLocationData(self):
 		return [{'type':'Location'}]
+	def load(self):
+		pass
 
 class containerLocation(Location):
 	'''Holds items'''
@@ -89,6 +91,10 @@ class containerLocation(Location):
 		
 	def returnLocationData(self):
 		return [{'type':'containerLocation', 'hasItems':self.hasItems}]
+	
+	def load(self, info):
+		if info[0]['type'] == 'containerLocation':
+			self.hasItems = info[0]['hasItems']
 
 class BlockedLocation(Location):
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoUnlocked, itemNeeded):
@@ -141,6 +147,9 @@ class BlockedLocation(Location):
 	
 	def returnLocationData(self):
 		return [{'type':'BlockedLocation', 'open':self.open}]
+	def load(self, info):
+		if info[0]['type'] == 'BlockedLocation':
+			self.open = info[0]['open']
 
 class BossLocation(Location): #All below TBI
 	'''Class for the boss'''
@@ -210,3 +219,7 @@ class BossLocation(Location): #All below TBI
 	
 	def returnLocationData(self):
 		return [{'type':'BossLocation', 'alive':self.alive, 'startTurn':self.startTurn}]
+	def load(self, info):
+		if info[0]['type'] == 'BossLocation':
+			self.alive = info[0]['alive']
+			self.startTurn = info[0]['startTurn']

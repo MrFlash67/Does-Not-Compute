@@ -148,7 +148,11 @@ def save(info):
 def load():
 	with open('save.txt', 'rb') as data:
 		info = pickle.load(data)
+		for x in data:
+			print x
 		return info
+	
+	
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)
