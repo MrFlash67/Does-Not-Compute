@@ -41,8 +41,8 @@ def showHelp():
 	print 'HELP: Display help'
 	print 'LOOK: Get a description of your surroundings'
 	print 'GO n/s/e/w: Move about in the world'
-	#print 'SAVE: Saves and exits your game'
-	#print 'LOAD: Loads your save'
+	print 'SAVE: Saves and exits your game'
+	print 'LOAD: Loads your save'
 	print 'QUIT: Exit the game'
 	print 'I or INV or INVENTORY: Display your inventory.'
 	print 'TAKE: Take all the objects in the room'
@@ -141,7 +141,7 @@ def save(info):
 	for x in DoesNotComputeLocations.locs:
 		info.append(x.returnLocationData())
 	with open('save.txt', 'w') as data:
-		print info
+		#print info
 		pickle.dump(info, data)
 		print 'Saved.'
 			
@@ -150,7 +150,7 @@ def load():
 		info = pickle.load(data)
 		i = 0
 		for x in info[1:]:
-			print x
+			#print x
 			DoesNotComputeLocations.locs[i].load(x)
 			i = i + 1
 		return info
