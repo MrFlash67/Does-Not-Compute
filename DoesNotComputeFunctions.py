@@ -1,4 +1,4 @@
-import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations
+import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations, pickle
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
@@ -41,8 +41,8 @@ def showHelp():
 	print 'HELP: Display help'
 	print 'LOOK: Get a description of your surroundings'
 	print 'GO n/s/e/w: Move about in the world'
-	#print 'SAVE: Saves and exits your game'
-	#print 'LOAD: Loads your save'
+	print 'SAVE: Saves and exits your game'
+	print 'LOAD: Loads your save'
 	print 'QUIT: Exit the game'
 	print 'I or INV or INVENTORY: Display your inventory.'
 	print 'TAKE: Take all the objects in the room'
@@ -133,7 +133,35 @@ def getIsOpen(loc):
 			print 'WRONG LOCATION'
 
 
+def getInfo(loc, inventory, loopNum):
+	locID = DoesNotComputeLocations.locs[loc].getLocID()
+	return [{'location':locID, 'inventory':inventory, 'loopNum':loopNum}]
 
+def save(info):
+	for x in DoesNotComputeLocations.locs:
+		info.append(x.returnLocationData())
+	with open('save.txt', 'w') as data:
+		print info
+		pickle.dump(info, data)
+		print 'Saved.'
+			
+def load():
+	try:
+		with open('save.txt', 'rb') as data:
+			info = pickle.load(data)
+			i = 0
+			for x in info[1:]:
+				#print x
+				if not DoesNotComputeLocations.locs[i].load(x):
+					#print 'baa'
+					return False
+				i = i + 1
+			return info
+	except IndexError:
+		print 'No save found. Try again'
+	except IOError:
+		print 'No save found. Try again'
+	
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)

@@ -27,11 +27,14 @@ def gameloop(invi, loopNum):
 		elif command in ('quit', 'exit', 'leave'):
 			DoesNotComputeFunctions.exit()
 		elif command == 'save':
-			pass
-			#loopNum = countAdd(loopNum)
+			DoesNotComputeFunctions.save(DoesNotComputeFunctions.getInfo(nowLoc, invi, loopNum))
 		elif command == 'load':
-			pass
-			#loopNum = countAdd(loopNum)
+			if DoesNotComputeFunctions.load():
+				info = DoesNotComputeFunctions.load()
+				nowLoc = info[0]['location']
+				invi = info[0]['inventory']
+				loopNum = info[0]['loopNum']
+				print 'Data loaded'
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
 		elif command in ('north', 'go n', 'go north', 'n', 'move n', 'move north'):

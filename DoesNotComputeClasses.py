@@ -2,7 +2,6 @@ import time, string, os, sys
 
 class Location(object):
 	'''Class for the locations'''
-	locID = 0
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures):
 		self.locID = locID
 		self.desc = desc
@@ -14,7 +13,7 @@ class Location(object):
 		'''Get the description for the area'''
 		return self.desc
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'''Find out its location in a integer.'''
 		return self.locID
 	
@@ -33,6 +32,15 @@ class Location(object):
 
 	def getLocType(self):
 		return 'Location'
+	
+	def returnLocationData(self):
+		return [{'type':'Location'}]
+	def load(self, info):
+		if info[0]['type'] == 'Location':
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False
 
 class containerLocation(Location):
 	'''Holds items'''
@@ -59,7 +67,7 @@ class containerLocation(Location):
 		else:
 			return self.descNoItems
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'''Find out its location in a integer.'''
 		return self.locID
 	
@@ -84,6 +92,17 @@ class containerLocation(Location):
 
 	def swapItems(self):
 		self.hasItems = False
+		
+	def returnLocationData(self):
+		return [{'type':'containerLocation', 'hasItems':self.hasItems}]
+	
+	def load(self, info):
+		if info[0]['type'] == 'containerLocation':
+			self.hasItems = info[0]['hasItems']
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False
 
 class BlockedLocation(Location):
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoUnlocked, itemNeeded):
@@ -100,7 +119,7 @@ class BlockedLocation(Location):
 		'Get the description for the area'
 		return self.desc
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'Find out its location in a integer.'
 		return self.locID
 	
@@ -133,7 +152,16 @@ class BlockedLocation(Location):
 
 	def getLocType(self):
 		return 'BlockedLocation'
-
+	
+	def returnLocationData(self):
+		return [{'type':'BlockedLocation', 'open':self.open}]
+	def load(self, info):
+		if info[0]['type'] == 'BlockedLocation':
+			self.open = info[0]['open']
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False
 class BossLocation(Location): #All below TBI
 	'''Class for the boss'''
 	locID = 0
@@ -152,7 +180,7 @@ class BossLocation(Location): #All below TBI
 		'''Get the description for the area'''
 		return self.desc + "\nIt contains a massive monster called " + self.bossName + " who wants to kill you.\nGood luck."
 	
-	def getNumLocation(self):
+	def getLocID(self):
 		'''Find out its location in a integer.'''
 		return self.locID
 	
@@ -199,3 +227,14 @@ class BossLocation(Location): #All below TBI
 
 	def getLocType(self):
 		return 'BossLocation'
+	
+	def returnLocationData(self):
+		return [{'type':'BossLocation', 'alive':self.alive, 'startTurn':self.startTurn}]
+	def load(self, info):
+		if info[0]['type'] == 'BossLocation':
+			self.alive = info[0]['alive']
+			self.startTurn = info[0]['startTurn']
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False
