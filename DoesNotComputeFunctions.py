@@ -146,17 +146,21 @@ def save(info):
 		print 'Saved.'
 			
 def load():
-	with open('save.txt', 'rb') as data:
-		info = pickle.load(data)
-		i = 0
-		for x in info[1:]:
-			#print x
-			if not DoesNotComputeLocations.locs[i].load(x):
-				#print 'baa'
-				return False
-			i = i + 1
-		return info
-	
+	try:
+		with open('save.txt', 'rb') as data:
+			info = pickle.load(data)
+			i = 0
+			for x in info[1:]:
+				#print x
+				if not DoesNotComputeLocations.locs[i].load(x):
+					#print 'baa'
+					return False
+				i = i + 1
+			return info
+	except IndexError:
+		print 'No save found. Try again'
+	except IOError:
+		print 'No save found. Try again'
 	
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
