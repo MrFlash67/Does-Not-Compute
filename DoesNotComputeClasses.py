@@ -36,7 +36,11 @@ class Location(object):
 	def returnLocationData(self):
 		return [{'type':'Location'}]
 	def load(self, info):
-		pass
+		if info[0]['type'] == 'Location':
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False
 
 class containerLocation(Location):
 	'''Holds items'''
@@ -95,6 +99,10 @@ class containerLocation(Location):
 	def load(self, info):
 		if info[0]['type'] == 'containerLocation':
 			self.hasItems = info[0]['hasItems']
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False
 
 class BlockedLocation(Location):
 	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoUnlocked, itemNeeded):
@@ -150,7 +158,10 @@ class BlockedLocation(Location):
 	def load(self, info):
 		if info[0]['type'] == 'BlockedLocation':
 			self.open = info[0]['open']
-
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False
 class BossLocation(Location): #All below TBI
 	'''Class for the boss'''
 	locID = 0
@@ -223,3 +234,7 @@ class BossLocation(Location): #All below TBI
 		if info[0]['type'] == 'BossLocation':
 			self.alive = info[0]['alive']
 			self.startTurn = info[0]['startTurn']
+			return True
+		else:
+			print 'Save data corrupt/from the wrong game. \nCancelling load.'
+			return False

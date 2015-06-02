@@ -141,7 +141,7 @@ def save(info):
 	for x in DoesNotComputeLocations.locs:
 		info.append(x.returnLocationData())
 	with open('save.txt', 'w') as data:
-		#print info
+		print info
 		pickle.dump(info, data)
 		print 'Saved.'
 			
@@ -151,7 +151,9 @@ def load():
 		i = 0
 		for x in info[1:]:
 			#print x
-			DoesNotComputeLocations.locs[i].load(x)
+			if not DoesNotComputeLocations.locs[i].load(x):
+				#print 'baa'
+				return False
 			i = i + 1
 		return info
 	
