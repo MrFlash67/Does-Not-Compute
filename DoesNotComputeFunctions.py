@@ -133,9 +133,9 @@ def getIsOpen(loc):
 			print 'WRONG LOCATION'
 
 
-def getInfo(loc, inventory):
+def getInfo(loc, inventory, loopNum):
 	locID = DoesNotComputeLocations.locs[loc].getLocID()
-	return [{'location':locID, 'inventory':inventory}]
+	return [{'location':locID, 'inventory':inventory, 'loopNum':loopNum}]
 
 def save(info):
 	for x in DoesNotComputeLocations.locs:
