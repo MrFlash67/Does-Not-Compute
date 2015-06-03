@@ -1,4 +1,4 @@
-import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations, pickle
+import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeLocations
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
@@ -137,30 +137,6 @@ def getInfo(loc, inventory, loopNum):
 	locID = DoesNotComputeLocations.locs[loc].getLocID()
 	return [{'location':locID, 'inventory':inventory, 'loopNum':loopNum}]
 
-def save(info):
-	for x in DoesNotComputeLocations.locs:
-		info.append(x.returnLocationData())
-	with open('save.txt', 'w') as data:
-		print info
-		pickle.dump(info, data)
-		print 'Saved.'
-			
-def load():
-	try:
-		with open('save.txt', 'rb') as data:
-			info = pickle.load(data)
-			i = 0
-			for x in info[1:]:
-				#print x
-				if not DoesNotComputeLocations.locs[i].load(x):
-					#print 'baa'
-					return False
-				i = i + 1
-			return info
-	except IndexError:
-		print 'No save found. Try again'
-	except IOError:
-		print 'No save found. Try again'
 	
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':

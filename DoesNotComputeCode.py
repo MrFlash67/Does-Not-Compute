@@ -27,14 +27,9 @@ def gameloop(invi, loopNum):
 		elif command in ('quit', 'exit', 'leave'):
 			DoesNotComputeFunctions.exit()
 		elif command == 'save':
-			DoesNotComputeFunctions.save(DoesNotComputeFunctions.getInfo(nowLoc, invi, loopNum))
+			print 'You cannot save in this version.\nDownload a different version from mrflash67.github.io/Does-Not-Compute'
 		elif command == 'load':
-			if DoesNotComputeFunctions.load():
-				info = DoesNotComputeFunctions.load()
-				nowLoc = info[0]['location']
-				invi = info[0]['inventory']
-				loopNum = info[0]['loopNum']
-				print 'Data loaded'
+			print 'You cannot save in this version.\nDownload a different version from mrflash67.github.io/Does-Not-Compute'
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
 		elif command in ('north', 'go n', 'go north', 'n', 'move n', 'move north'):
