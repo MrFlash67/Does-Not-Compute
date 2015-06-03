@@ -1,4 +1,4 @@
-import time, string, os, sys
+import time, string, sys
 
 class Location(object):
 	'''Class for the locations'''
