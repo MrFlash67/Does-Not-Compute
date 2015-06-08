@@ -105,7 +105,7 @@ class containerLocation(Location):
 			return False
 
 class BlockedLocation(Location):
-	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoUnlocked, itemNeeded):
+	def __init__(self, locID, desc, whereCanGo, name, specialFeatures, whereCanGoUnlocked, itemNeeded, descUnlocked):
 		self.locID = locID
 		self.desc = desc
 		self.whereCanGo = whereCanGo
@@ -113,11 +113,15 @@ class BlockedLocation(Location):
 		self.specialFeatures = specialFeatures
 		self.whereCanGoUnlocked = whereCanGoUnlocked
 		self.itemNeeded = itemNeeded
+		self.descUnlocked = descUnlocked
 		self.open = False
 
 	def getDesc(self):
 		'Get the description for the area'
-		return self.desc
+		if self.open:
+			return self.descUnlocked
+		else:
+			return self.desc
 	
 	def getLocID(self):
 		'Find out its location in a integer.'
@@ -155,6 +159,7 @@ class BlockedLocation(Location):
 	
 	def returnLocationData(self):
 		return [{'type':'BlockedLocation', 'open':self.open}]
+	
 	def load(self, info):
 		if info[0]['type'] == 'BlockedLocation':
 			self.open = info[0]['open']

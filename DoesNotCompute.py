@@ -2,7 +2,7 @@ import DoesNotComputeCode as dnc, DoesNotComputeFunctions, sys, DoesNotComputeMo
 try:
 	print
 	'''Commented out for time'''
-	 DoesNotComputeFunctions.intro()
+	DoesNotComputeFunctions.intro()
 	inv = ['NO TEA']
 	loopCount = dnc.gameloop(inv, 0)
 except KeyboardInterrupt:
