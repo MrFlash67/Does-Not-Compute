@@ -15,7 +15,7 @@ def gameloop(invi, loopNum):
 	'''Main game loop'''
 	nowLoc = 0
 	while True:
-		command = string.lower(raw_input('> '))
+		command = raw_input('> ')
 		if command == 'help':
 			DoesNotComputeFunctions.showHelp()
 			loopNum = countAdd(loopNum)

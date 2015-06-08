@@ -4,18 +4,16 @@ def intro():
 	print 'MrFlash67 presents:'
 	time.sleep(2)
 	print '''
-______                  _   _       _     _____                             _       
-|  _  \                | \ | |     | |   /  __ \                           | |      
-| | | |___   ___  ___  |  \| | ___ | |_  | /  \/ ___  _ __ ___  _ __  _   _| |_ ___ 
-| | | / _ \ / _ \/ __| | . ` |/ _ \| __| | |    / _ \| '_ ` _ \| '_ \| | | | __/ _ \\
-| |/ / (_) |  __/\__ \ | |\  | (_) | |_  | \__/\ (_) | | | | | | |_) | |_| | ||  __/
-|___/ \___/ \___||___/ \_| \_/\___/ \__|  \____/\___/|_| |_| |_| .__/ \__,_|\__\___|
-							       | |
-							       |_|
+  ___               _  _     _      ___                     _       
+ |   \ ___ ___ ___ | \| |___| |_   / __|___ _ __  _ __ _  _| |_ ___ 
+ | |) / _ / -_(_-< | .` / _ |  _| | (__/ _ | '  \| '_ | || |  _/ -_)
+ |___/\___\___/__/ |_|\_\___/\__|  \___\___|_|_|_| .__/\_,_|\__\___|
+                                                 |_|                
 '''
 	print
 	print 'Press enter to continue.',
 	raw_input()
+	print
 	look(0)
 	whichWays(DoesNotComputeLocations.locs[0])
 	print 'You can now enter commands. Type \'help\' without the quotation marks and press \'enter\' for help'
@@ -37,7 +35,7 @@ def listStuff(l):
 def showHelp():
 	'''The help display.'''
 	'''Uncomment lines when implimented'''
-	print 'All commands are case-insensitive'
+	print 'All commands are case-sensitive and should be entered in lowercase'
 	print 'HELP: Display help'
 	print 'LOOK: Get a description of your surroundings'
 	print 'GO n/s/e/w: Move about in the world'
