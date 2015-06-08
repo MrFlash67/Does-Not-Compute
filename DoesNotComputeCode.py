@@ -7,7 +7,7 @@ def look(loc):
 	DoesNotComputeFunctions.look(loc)
 	DoesNotComputeFunctions.whichWays(locs[loc])
 	if locs[loc].getLocType() in ('BlockedLocation', 'BossLocation'):
-		if not locs[loc].getIsOpen:
+		if locs[loc].getIsOpen():
 			print 'You can move through here'
 		else:
 			print 'You cannot move through here'
