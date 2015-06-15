@@ -60,7 +60,7 @@ def goWest(nowLoc):
 		else:
 			return whereCanGoUnlocked[3]
 	elif whereCanGo[3] == -1:
-		'You cannot go this way.'
+		print 'You cannot go this way.'
 		return nowLoc
 	else:
 		return whereCanGo[3]
