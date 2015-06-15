@@ -127,8 +127,6 @@ def getIsOpen(loc):
 				return True
 			else:
 				return False
-		else:
-			print 'WRONG LOCATION'
 
 
 def getInfo(loc, inventory, loopNum):

@@ -1,4 +1,4 @@
-import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement
+import sys, DoesNotComputeClasses, string, DoesNotComputeFunctions, DoesNotComputeMovement, fnmatch
 from DoesNotComputeLocations import *
 def countAdd(loopNum):
 	loopNum = loopNum + 1
@@ -62,7 +62,7 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 		elif command == 'items' or command == 'ii':
 			DoesNotComputeFunctions.itemInfo(nowLoc)
-		elif command in ('take', 'get'):
+		elif command in ('take', 'get', 'take all'):
 			if DoesNotComputeFunctions.itemTF(nowLoc):
 				if locs[nowLoc].getHasItems():
 					invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
@@ -76,6 +76,8 @@ def gameloop(invi, loopNum):
 			print 'Ye can\'t get ye flask!'
 		elif command == 'attack' or command == 'fight':
 			DoesNotComputeFunctions.attack(nowLoc, loopNum)
+		elif fnmatch.fnmatch(command, 'take *') or fnmatch.fnmatch(command, 'get *') or fnmatch.fnmatch(command, 'use *') or fnmatch.fnmatch(command, 'open* ') or fnmatch.fnmatch(command, 'unlock *'):
+			print 'You do not need to specify an argument for that command.'
 		else:
 			print 'Illegal command.\nYou will be arrested posthaste.'
 if __name__ == '__main__':
