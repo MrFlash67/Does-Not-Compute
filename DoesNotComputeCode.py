@@ -62,7 +62,7 @@ def gameloop(invi, loopNum):
 			DoesNotComputeFunctions.whichWays(locs[nowLoc])
 		elif command == 'items' or command == 'ii':
 			DoesNotComputeFunctions.itemInfo(nowLoc)
-		elif command in ('take', 'get'):
+		elif command in ('take', 'get', 'take all'):
 			if DoesNotComputeFunctions.itemTF(nowLoc):
 				if locs[nowLoc].getHasItems():
 					invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
