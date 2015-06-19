@@ -163,6 +163,7 @@ def load():
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)
-
+	else:
+		print 'There is nothing to attack here.'
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
