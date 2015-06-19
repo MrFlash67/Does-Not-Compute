@@ -2,7 +2,7 @@ import sys, time, DoesNotComputeMovement, DoesNotComputeClasses, DoesNotComputeL
 def intro():
 	'''Starts the program'''
 	print 'MrFlash67 presents:'
-	time.sleep(2)
+	time.sleep(0.2)
 	print '''
   ___               _  _     _      ___                     _       
  |   \ ___ ___ ___ | \| |___| |_   / __|___ _ __  _ __ _  _| |_ ___ 
@@ -61,7 +61,12 @@ def look(activeLocation):
 
 
 def whichWays(loc):
-	moveLocs = loc.whereCanGo
+	if loc.getLocType() in ('BlockedLocation', 'BossLocation') and loc.getIsOpen():
+		moveLocs = loc.whereCanGoUnlocked
+	elif loc.getLocType() in ('BlockedLocation', 'BossLocation') and not loc.getIsOpen():
+		moveLocs = loc.whereCanGo
+	else:
+		moveLocs = loc.whereCanGo
 	loc0 = moveLocs[0]
 	loc1 = moveLocs[1]
 	loc2 = moveLocs[2]
@@ -137,6 +142,7 @@ def getInfo(loc, inventory, loopNum):
 def attack(loc, turn):
 	if DoesNotComputeLocations.locs[loc].getLocType() == 'BossLocation':
 		print DoesNotComputeLocations.locs[loc].attack(turn)
-
+	else:
+		print 'There is nothing to attack here.'
 if __name__ == '__main__':
 	whichWays([-1, 2, -1, 3])
