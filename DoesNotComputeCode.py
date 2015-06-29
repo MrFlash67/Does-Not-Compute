@@ -14,14 +14,20 @@ def look(loc):
 def gameloop(invi, loopNum):
 	'''Main game loop'''
 	nowLoc = 0
+	help = 0
 	while True:
-		command = raw_input('> ')
+		if help > 4:
+			print 'Need any help?\nYou can always use the \'help\' command!'
+			help = 0
+		command = (raw_input('> ')
 		if command == 'help':
 			DoesNotComputeFunctions.showHelp()
 			loopNum = countAdd(loopNum)
+			help = 0
 		elif command == 'look':
 			look(nowLoc)
 			loopNum = countAdd(loopNum)
+			help += 1
 		elif command == 'go':
 			print 'Use "go north/south/east/west/n/s/e/w"'
 		elif command in ('quit', 'exit', 'leave'):
@@ -32,6 +38,7 @@ def gameloop(invi, loopNum):
 			print 'You cannot save in this version.\nDownload a different version from mrflash67.github.io/Does-Not-Compute'
 		elif command in ('inv', 'i', 'inventory'):
 			print 'Your inventory contains: ' + DoesNotComputeFunctions.listStuff(invi)
+			help += 1
 		elif command in ('north', 'go n', 'go north', 'n', 'move n', 'move north'):
 			nowLoc = DoesNotComputeMovement.goNorth(nowLoc)
 			look(nowLoc)
@@ -51,7 +58,10 @@ def gameloop(invi, loopNum):
 		elif command in ('open', 'use', 'unlock'):
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
 			DoesNotComputeFunctions.lockedOpen(nowLoc, invi)
-			DoesNotComputeFunctions.getIsOpen(nowLoc)
+			if DoesNotComputeFunctions.getIsOpen(nowLoc):
+				help -=1
+			else:
+				help +=1 
 			loopNum = countAdd(loopNum)
 		elif command == 'loopn':
 			print loopNum
@@ -67,13 +77,18 @@ def gameloop(invi, loopNum):
 				if locs[nowLoc].getHasItems():
 					invi.extend(DoesNotComputeFunctions.itemPickup(nowLoc))
 					locs[nowLoc].swapItems()
+					help -= 1
 				else:
 					print 'You have already taken all the items in this area.'
+					help += 1
 			else:
 				print 'There are no items in this location.'
+				help +=1
 			loopNum = countAdd(loopNum)
 		elif command == 'get ye flask':
 			print 'Ye can\'t get ye flask!'
+		elif command == 'helpa':
+			print help
 		elif command == 'attack' or command == 'fight':
 			DoesNotComputeFunctions.attack(nowLoc, loopNum)
 		else:
