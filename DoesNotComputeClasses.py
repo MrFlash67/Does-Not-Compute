@@ -211,7 +211,7 @@ class BossLocation(Location): #All below TBI
 			self.startTurn = turn + 1
 		if self.alive == True:
 			if turn < self.startTurn:
-				return 'He attacks.\nHealth:\ninfinity/infinity\nFeel like waiting?'
+				return 'He attacks.\nHealth:\ninfinity/infinity\nPatience is a virtue.'
 			elif turn >= self.startTurn:
 				self.alive = False
 				print 'He dies from Sudden Death Syndrome.\nYou win.\n\n'
