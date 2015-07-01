@@ -19,7 +19,7 @@ def gameloop(invi, loopNum):
 		if help > 4:
 			print 'Need any help?\nYou can always use the \'help\' command!'
 			help = 0
-		command = (raw_input('> ')
+		command = (raw_input('> '))
 		if command == 'help':
 			DoesNotComputeFunctions.showHelp()
 			loopNum = countAdd(loopNum)
