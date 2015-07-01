@@ -82,10 +82,8 @@ def whichWays(loc):
 			way = 'South'
 		elif num == 3:
 			way = 'West'
-		if loc == -1:
-			print 'No moving to the {}!'.format(way)
-		else:
-			print 'You can go to the {}!'.format(way)
+		if loc != -1:
+			print 'There is an exit to the {}.'.format(way)
 		#print num
 		num = num + 1
 		#print num
@@ -104,7 +102,7 @@ def itemTF(loc):
 
 def itemPickup(loc):
 	try:
-		print 'You now have ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' in your inventory.'
+		print 'You now have a' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' in your inventory.'
 		return DoesNotComputeLocations.locs[loc].getItems()
 	except TypeError:
 		print 'There are no items in this location.'
