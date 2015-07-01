@@ -208,7 +208,7 @@ class BossLocation(Location): #All below TBI
 
 	def attack(self, turn):
 		if self.startTurn == 0:
-			self.startTurn = turn + 1
+			self.startTurn = turn + 2
 		if self.alive == True:
 			if turn < self.startTurn:
 				return 'He attacks.\nHealth:\ninfinity/infinity\nPatience is a virtue.'

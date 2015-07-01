@@ -96,6 +96,7 @@ def gameloop(invi, loopNum):
 			print help
 		elif command == 'attack' or command == 'fight':
 			DoesNotComputeFunctions.attack(nowLoc, loopNum)
+			loopNum = countAdd(loopNum)
 		elif fnmatch.fnmatch(command, 'take *') or fnmatch.fnmatch(command, 'get *') or fnmatch.fnmatch(command, 'use *') or fnmatch.fnmatch(command, 'open* ') or fnmatch.fnmatch(command, 'unlock *'):
 			print 'You do not need to specify an argument for that command.'
 		else:
