@@ -17,10 +17,10 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 			help = 0
 		elif command == 'look':
-			DoesNotComputeFunctions.look(loc)
-			DoesNotComputeFunctions.whichWays(locs[loc])
-			if locs[loc].getLocType() in ('BlockedLocation', 'BossLocation'):
-				if locs[loc].getIsOpen():
+			DoesNotComputeFunctions.look(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
+			if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation'):
+				if locs[nowLoc].getIsOpen():
 					print 'There is an unlocked door or fixed obstacle here.'
 				else:
 					print 'There is a locked door or obstacle here.'
@@ -43,19 +43,43 @@ def gameloop(invi, loopNum):
 			help += 1
 		elif command in ('north', 'go n', 'go north', 'n', 'move n', 'move north'):
 			nowLoc = DoesNotComputeMovement.goNorth(nowLoc)
-			look(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
+			if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation'):
+				if locs[nowLoc].getIsOpen():
+					print 'There is an unlocked door or fixed obstacle here.'
+				else:
+					print 'There is a locked door or obstacle here.'
 			loopNum = countAdd(loopNum)
 		elif command in ('south', 'go s', 'go south', 's', 'move s', 'move south'):
 			nowLoc = DoesNotComputeMovement.goSouth(nowLoc)
-			look(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
+			if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation'):
+				if locs[nowLoc].getIsOpen():
+					print 'There is an unlocked door or fixed obstacle here.'
+				else:
+					print 'There is a locked door or obstacle here.'
 			loopNum = countAdd(loopNum)
 		elif command in ('west', 'go w', 'go west', 'w', 'move w', 'move west'):
 			nowLoc = DoesNotComputeMovement.goWest(nowLoc)
-			look(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
+			if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation'):
+				if locs[nowLoc].getIsOpen():
+					print 'There is an unlocked door or fixed obstacle here.'
+				else:
+					print 'There is a locked door or obstacle here.'
 			loopNum = countAdd(loopNum)
 		elif command in ('east', 'go e', 'go east', 'e', 'move e', 'move east'):
 			nowLoc = DoesNotComputeMovement.goEast(nowLoc)
-			look(nowLoc)
+			DoesNotComputeFunctions.look(nowLoc)
+			DoesNotComputeFunctions.whichWays(locs[nowLoc])
+			if locs[nowLoc].getLocType() in ('BlockedLocation', 'BossLocation'):
+				if locs[nowLoc].getIsOpen():
+					print 'There is an unlocked door or fixed obstacle here.'
+				else:
+					print 'There is a locked door or obstacle here.'
 			loopNum = countAdd(loopNum)
 		elif command in ('open', 'use', 'unlock'):
 			DoesNotComputeFunctions.getIsOpen(nowLoc)
