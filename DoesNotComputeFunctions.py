@@ -84,10 +84,8 @@ def whichWays(loc):
 			way = 'South'
 		elif num == 3:
 			way = 'West'
-		if loc == -1:
-			print 'No moving to the {}!'.format(way)
-		else:
-			print 'You can go to the {}!'.format(way)
+		if loc != -1:
+			print 'There is an exit to the {}.'.format(way)
 		#print num
 		num = num + 1
 		#print num
