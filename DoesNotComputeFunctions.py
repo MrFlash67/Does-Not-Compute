@@ -104,7 +104,7 @@ def itemTF(loc):
 
 def itemPickup(loc):
 	try:
-		print 'You now have ' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' in your inventory.'
+		print 'You now have a' + listStuff(DoesNotComputeLocations.locs[loc].getItems()) + ' in your inventory.'
 		return DoesNotComputeLocations.locs[loc].getItems()
 	except TypeError:
 		print 'There are no items in this location.'
