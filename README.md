@@ -1,8 +1,8 @@
 Does Not Compute
 ================
 
-A text adventure, now OOP!
+A text adventure/text adventure creation tool.
 
-Website [here](http://mrflash67.github.io/Does-Not-Compute/  "Github Pages")
+Website [here](http://lafol.muute.net/code/doesnotcompute)
 
-[very WIP]
+Now at version 1.0!
