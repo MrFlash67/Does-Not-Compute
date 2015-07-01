@@ -3,14 +3,6 @@ from DoesNotComputeLocations import *
 def countAdd(loopNum):
 	loopNum = loopNum + 1
 	return loopNum
-def look(loc):
-	DoesNotComputeFunctions.look(loc)
-	DoesNotComputeFunctions.whichWays(locs[loc])
-	if locs[loc].getLocType() in ('BlockedLocation', 'BossLocation'):
-		if locs[loc].getIsOpen():
-			print 'You can move through here'
-		else:
-			print 'You cannot move through here'
 def gameloop(invi, loopNum):
 	'''Main game loop'''
 	nowLoc = 0
@@ -25,8 +17,13 @@ def gameloop(invi, loopNum):
 			loopNum = countAdd(loopNum)
 			help = 0
 		elif command == 'look':
-			look(nowLoc)
-			loopNum = countAdd(loopNum)
+			DoesNotComputeFunctions.look(loc)
+			DoesNotComputeFunctions.whichWays(locs[loc])
+			if locs[loc].getLocType() in ('BlockedLocation', 'BossLocation'):
+				if locs[loc].getIsOpen():
+					print 'There is an unlocked door or fixed obstacle here.'
+				else:
+					print 'There is a locked door or obstacle here.'
 			help += 1
 		elif command == 'go':
 			print 'Use "go north/south/east/west/n/s/e/w"'
